@@ -1,0 +1,2 @@
+class OnlineJudgeController < ApplicationController
+end

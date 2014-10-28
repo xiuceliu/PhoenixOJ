@@ -1,0 +1,14 @@
+<p>
+  <strong>User:</strong>
+  <%= discuss.user %>
+</p>
+ 
+<p>
+  <strong>Content:</strong>
+  <%= discuss.content %>
+</p>
+  <p>
+<%= link_to 'Delete this post', [discuss.problem, discuss],
+  :confirm => 'Are you sure?',
+  :method => :delete %>
+</p>
