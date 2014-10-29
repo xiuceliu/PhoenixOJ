@@ -1,3 +1,9 @@
+<% content_for :head do %>
+  <style>
+  </style>
+<% end %>
+
+
 <h1>Problem List</h1>
 
 
@@ -8,10 +14,14 @@
   </p>
 <% end %>
 
-<%= link_to "Show the complete problem list", problems_path %>
+<%= link_to "Show the complete problem list", problemslist_path %>
 
+<h3>Volume
+  <% for i in 1 .. @tot do %>
+    <%= link_to i, problemslist_path(i)%>
+  <% end %>
+</h3>
 
-</br></br>
 
 <% if @problems.count != 0 %>
   <table>

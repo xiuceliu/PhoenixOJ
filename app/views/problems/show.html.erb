@@ -12,14 +12,5 @@
 
 
 <%= link_to 'Edit', edit_problem_path(@problem) %> |
-<%= link_to 'Back', problems_path %>
-
-<div class = "Discuss">
-
-<h2>Discusses</h2>
-<%= render @problem.discusses %>
- 
-<h2>Add a discuss:</h2>
-<%= render "discusses/form" %>
-
-</div>
+<%= link_to 'Back', problemslist_path(1) %> |
+<%= link_to 'Discuss', problem_discusses_path %>

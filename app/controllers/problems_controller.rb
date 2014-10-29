@@ -3,6 +3,30 @@ class ProblemsController < ApplicationController
   # GET /problems.json
   def index
     @problems = Problem.search(params[:search])
+    @tot = Problem.all.count
+    @tot = (@tot - 1) / 3 + 1
+    x = params[:id]
+    if x
+      @problems = []
+      x = params[:id].to_i
+      t = Problem.all.count
+      i = 1
+      problem_numbers = -3 * (x - 1)
+      while t > 0 do
+        if Problem.exists?(i)
+          problem_numbers += 1
+          t -= 1
+          if problem_numbers > 0
+            @problems = @problems + [Problem.find(i)]
+          end
+        end
+        if problem_numbers == 3
+          break
+        end
+        i += 1
+      end
+    end
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @problems }

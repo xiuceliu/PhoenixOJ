@@ -1,6 +1,6 @@
 PheonixOJ::Application.routes.draw do
 
-
+  get '/problemslist/(:id)', to: 'problems#index', as: :problemslist
   
   resources :problems do
     resources :discusses
