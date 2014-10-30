@@ -1,6 +1,6 @@
 PheonixOJ::Application.routes.draw do
 
-  get '/problemslist/(:id)', to: 'problems#index', as: :problemslist
+  devise_for :users
   
   resources :problems do
     resources :discusses
@@ -8,7 +8,6 @@ PheonixOJ::Application.routes.draw do
 
 
   root to: 'OnlineJudge#index'
-
   get '/faq', to: 'faq#index', as: 'faq'
   get '/forum', to: 'forum#index', as: 'forum'
 

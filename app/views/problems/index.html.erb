@@ -1,11 +1,7 @@
-<% content_for :head do %>
-  <style>
-  </style>
-<% end %>
-
-
-<h1>Problem List</h1>
-
+<%- model_class = Problem -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
 
 <%= form_tag problems_path, :method => 'get' do %>
   <p>
@@ -14,46 +10,35 @@
   </p>
 <% end %>
 
-<%= link_to "Show the complete problem list", problemslist_path %>
-
-<h3>Volume
-  <% for i in 1 .. @tot do %>
-    <%= link_to i, problemslist_path(i)%>
-  <% end %>
-</h3>
-
-
 <% if @problems.count != 0 %>
-  <table>
-  <tr>
-    <th>Problem ID</th>
-    <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-  <% @problems.each do |problem| %>
-  <tr>
-    <td><%= problem.id %></td>
-    <td><%= link_to problem.title, problem %></td>
-<!--
-    <td><%= problem.content %></td>
-    <td><%= link_to 'Show', problem %></td>
-    <td><%= link_to 'Edit', edit_problem_path(problem) %></td>
-    <td><%= link_to 'Destroy', problem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
--->
-  </tr>
-  <% end %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th><%= model_class.human_attribute_name(:id) %></th>
+        <th><%= model_class.human_attribute_name(:title) %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @problems.each do |problem| %>
+        <tr>
+          <td><%= link_to problem.id, problem_path(problem) %></td>
+          <td><%= link_to problem.title, problem %></td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
-  <br/>
+  <% unless @has_search %>
+    <div class="apple_pagination">
+      <div class="page_info">
+        <%= page_entries_info @problems %>
+      </div>
+      <%= will_paginate @problems, :container => false %>
+    </div>
+  <% end %>
 <% else %>
-  <br/>
   <h2>No results found!</h2>
-  <br/>
 <% end %>
 
-
-
-<br/>
-<%= link_to 'New Problem', new_problem_path %> |
-<%= link_to 'Back to home', '/' %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_problem_path,
+            :class => 'btn btn-primary' %>
