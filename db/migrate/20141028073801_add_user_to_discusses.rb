@@ -3,4 +3,3 @@ class AddUserToDiscusses < ActiveRecord::Migration
     # add_column :discusses, :users, :string
   end
 end
-123213213
