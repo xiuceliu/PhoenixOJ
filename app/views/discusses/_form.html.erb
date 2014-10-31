@@ -5,12 +5,7 @@
       <%= f.text_area :content, :class => 'text_area' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :user, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :user, :class => 'text_field' %>
-    </div>
-  </div>
+  <% @discuss.user_id = 1 %>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>

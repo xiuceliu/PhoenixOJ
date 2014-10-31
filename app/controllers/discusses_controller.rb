@@ -1,4 +1,5 @@
 class DiscussesController < ApplicationController
+	before_filter :authenticate_user!, :except => [:index, :show]
 	def index
 		@problem = Problem.find(params[:problem_id])
 		@discusses = @problem.discusses
@@ -17,7 +18,10 @@ class DiscussesController < ApplicationController
   	end
 	def create
 		@problem = Problem.find(params[:problem_id])
-		@discuss = @problem.discusses.create(params[:discuss])
+		@discuss = Discuss.new(params[:discuss])
+		@discuss.problem = @problem
+		@discuss.user = current_user
+		@discuss.save
 		redirect_to problem_discusses_path(@problem)
 	end
 	def destroy

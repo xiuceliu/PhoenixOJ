@@ -17,7 +17,7 @@
   <tbody>
     <% @discusses.each do |discuss| %>
       <tr>
-        <td><%= discuss.user %></td>
+        <td><%= discuss.user.username %></td>
         <td><%= discuss.content %></td>        
         <td><%=l discuss.created_at %></td>
         <td>

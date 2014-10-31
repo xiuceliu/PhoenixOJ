@@ -17,6 +17,7 @@ class ProblemsController < ApplicationController
   # GET /problems/1.json
   def show
     @problem = Problem.find(params[:id])
+    @submission = Submission.new(params[:submission])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @problem }

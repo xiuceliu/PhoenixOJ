@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,:timeoutable,
          :recoverable, :rememberable, :trackable, :validatable,
          :authentication_keys=>[:username]
-
+  has_many :discusses
+  has_many :submissions
   # Setup accessible (or protected) attributes for your model
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me
   def add_value
