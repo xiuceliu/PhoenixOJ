@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  
   <title>PhoenixOJ</title>
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
@@ -29,25 +30,90 @@
             <li><%= link_to "Problem Set", problems_path %></li>
             <li><%= link_to "Status", status_path %></li>
             <li><%= link_to "FAQ", faq_path %></li>
-            <li><%= link_to "Forum", forum_path %></li>
-            
-					  	<% if user_signed_in? %>
-								<li><%= link_to current_user.username, edit_user_registration_path %></li>
-								<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-							<% else %>
-
-								<li><%= link_to "Sign up", new_user_registration_path %></li> 
-								<li><%= link_to "Login", new_user_session_path %></li>
-							<% end %>
-						
+            <li><%= link_to "Forum", forum_path %></li>		
+            <li class="dropdown" id="more"><a class="dropdown-toggle" data-toggle="dropdown" href="teaminfo.php">More... <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="news.php">News</a></li>
+                  <li><a href="teaminfo.php">Our Team</a></li>
+                  <li><a href="http://www.oiegg.com/forumdisplay.php?fid=407" target="_blank">BBS</a></li>
+                  <li class="divider"></li>
+                  <li><a href="recent_contest.php">Recent Contests</a></li>
+                  <!--<li><a href="training_stat.php">Training Stats</a></li>-->
+                  <li class="divider"></li>
+                  <li class="disabled"><a>Coming Soon...</a></li>
+                </ul>
+              </li>				
           </ul>
+          <% if user_signed_in? %>
+            <ul id="logoutbar" class="nav pull-right">
+              <li class="dropdown" id="userspace">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                 <%= current_user.username %>
+                <b class = "caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+                  <li><%= link_to "Edit User Profile", edit_user_registration_path %></li>
+                </ul>
+              </li>
+            </ul>
+          <% else %>
+            <ul id="logoutbar" class="nav pull-right">
+              <!-- <li><%= link_to "Login", new_user_session_path %></li> -->
+              <li><a data-toggle="modal" href="#myModal">Login</a></li>
+              <li><%= link_to "Sign Up", new_user_registration_path %></li>
+            </ul>
+          <% end %>
+          <p class="pull-right navbar-text"><span id="servertime">2014-11-12 22:44:39</span>&nbsp;</p>
         </div>
       </div>
     </div>
   </div>
 
+<marquee class="hidden-phone" direction="left" behavior="alternate" scrollamount="2"
+style="position:absolute;width:100%;"><b>This is the project of the team xPhoenix.</b></marquee>
+
   <div class = "container">
 		<%= yield %>
 	</div>
+
+
+
+
 </body>
+
+
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="myModalLabel">Log In</h3>
+            </div>
+            <div id="modify_form" class="form-horizontal ajform">
+            <div class="modal-body">
+              <%= form_for(:user, :url => session_path(:user)) do |f| %>
+              <div class="control-group">
+                <label class="control-label">Username: </label>
+                  <div class="controls">
+                    <%= f.text_field :username, autofocus: true, class: "input-medium", placeholder: "Username"%>
+                  </div>
+              </div>
+              <div class="control-group">
+                <label class="control-label">Password: </label>
+                <div class="controls">
+                  <%= f.password_field :password, class: "input-medium", placeholder: "Password" %>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="modal-footer">
+              <%= f.submit "Login", class: "btn btn-primary" %>
+              <button class="btn" data-dismiss="modal">Close</button>
+            </div>
+            <% end %>
+</div>
+
 </html>
+
+
+
+          

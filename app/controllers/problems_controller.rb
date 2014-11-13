@@ -1,12 +1,9 @@
 class ProblemsController < ApplicationController
   # GET /problems
   # GET /problems.json
+  require 'will_paginate/array'
   def index
-    @problems = Problem.paginate :page => params[:page], :per_page => 3
-    @has_search = params[:search]
-    if @has_search
-      @problems = Problem.search(params[:search])
-    end
+    @problems = Problem.search(params[:kwd]).paginate :page => params[:page], :per_page => 3
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @problems }

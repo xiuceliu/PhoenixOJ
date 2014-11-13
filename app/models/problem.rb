@@ -3,13 +3,8 @@ class Problem < ActiveRecord::Base
   has_many :discusses
   has_many :submissions
 
-  def self.search(search)
-  	if search
-  		find(:all, :conditions => ['id = ?', "#{search}"])
-  	else
-  		find(:all)
-  	end
+  def self.search(kwd)
+  	find(:all, :conditions => ['title LIKE ?', "%#{kwd}%"])
   end
-
 
 end

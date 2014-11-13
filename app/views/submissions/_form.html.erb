@@ -2,6 +2,17 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
+
+<form id="filterform" class="form-inline" method="">
+<%= form_tag problems_path, :method => 'get' do %>
+  <p>
+    Username: <%= text_field_tag :usn, params[:usn], class: "input-small", placeholder: "Username" %>
+    Problem ID: <%= text_field_tag :pid, params[:pid], class: "input-small", placeholder: "Problem ID" %>
+    <%= submit_tag "Search for Submission", :name => nil, class: "btn" %>
+  </p>
+<% end %>
+</form>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -28,13 +39,21 @@
           <% else %>
             Show Code
           <% end %>
+          <!-- 
             <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       problem_submission_path(submission.problem_id, submission),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
+                      :class => 'btn btn-mini btn-danger' %> -->
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+    <div class="apple_pagination">
+      <div class="page_info">
+        <%= page_entries_info @submissions %>
+      </div>
+      <%= will_paginate @submissions, :container => false %>
+    </div>

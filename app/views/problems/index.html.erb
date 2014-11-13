@@ -3,12 +3,14 @@
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 
+<form id="filterform" class="form-inline" method="">
 <%= form_tag problems_path, :method => 'get' do %>
   <p>
-    <%= text_field_tag :search %>
-    <%= submit_tag "Search for Problem ID", :name => nil %>
+    Search keyword in title: <%= text_field_tag :kwd, params[:kwd], class: "input-small", placeholder: "Keyword" %>
+    <%= submit_tag "Search for Submission", :name => nil, class: "btn" %>
   </p>
 <% end %>
+</form>
 
 <% if @problems.count != 0 %>
   <table class="table table-striped">
@@ -27,18 +29,19 @@
       <% end %>
     </tbody>
   </table>
-  <% unless @has_search %>
-    <div class="apple_pagination">
-      <div class="page_info">
-        <%= page_entries_info @problems %>
-      </div>
-      <%= will_paginate @problems, :container => false %>
+  <div class="apple_pagination">
+    <div class="page_info">
+      <%= page_entries_info @problems %>
     </div>
-  <% end %>
+    <%= will_paginate @problems, :container => false %>
+  </div>
 <% else %>
   <h2>No results found!</h2>
 <% end %>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<% if current_user %>
+  <% if current_user.admin? %>
+    <%= link_to t('.new', :default => t("helpers.links.Add a problem")),
             new_problem_path,
             :class => 'btn btn-primary' %>
+  <% end %>
+<% end %>

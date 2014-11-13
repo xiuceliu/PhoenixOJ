@@ -1,14 +1,11 @@
 class SubmissionsController < ApplicationController
   
   before_filter :authenticate_user!, :except => [:index , :showall, :show]
-  
-  def showall
-    @submissions = Submission.all
-  end
+
+  # require 'will_paginate/array'
 
   def index
-    @problem = Problem.find(params[:problem_id])
-    @submissions = @problem.submissions
+    @submissions = Submission.search(params[:pid], params[:usn]).paginate :page => params[:page], :per_page => 3
   end
 
   def show
