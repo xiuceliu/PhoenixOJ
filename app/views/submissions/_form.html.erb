@@ -17,10 +17,13 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:Runid) %></th>
+      <th><%= model_class.human_attribute_name(:Submitted_at) %></th>
       <th><%= model_class.human_attribute_name(:Username) %></th>
       <th><%= model_class.human_attribute_name(:Problem_id) %></th>
       <th><%= model_class.human_attribute_name(:Language) %></th>
-      <th><%= model_class.human_attribute_name(:Submitted_at) %></th>
+      <th><%= model_class.human_attribute_name(:Verdict) %></th>
+      <th><%= model_class.human_attribute_name(:Time) %></th>
+      <th><%= model_class.human_attribute_name(:Memory) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -28,10 +31,14 @@
     <% @submissions.each do |submission| %>
       <tr>
         <td><%= submission.id %></td>
+        <td><%= submission.created_at %></td>
         <td><%= submission.user.username %></td>
         <td><%= submission.problem_id %></td>
         <td><%= submission.language %></td>
-        <td><%=l submission.created_at %></td>
+        <td><%= submission.verdict %></td>
+        <td><%= "#{submission.timeConsumedMillis} KB"%></td>
+        <td><%= "#{submission.memoryConsumedBytes} MS" %></td>
+        
         <td>
           <% if submission.user == current_user %>
           <%= link_to t('.show', :default => t("helpers.links.Show Code")),

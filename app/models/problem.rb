@@ -1,5 +1,5 @@
 class Problem < ActiveRecord::Base
-  attr_accessible :content, :title
+  attr_accessible :content, :title, :pid, :ptype
   has_many :discusses
   has_many :submissions
 

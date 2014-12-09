@@ -16,15 +16,19 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th><%= model_class.human_attribute_name(:id) %></th>
+        <!-- <th><%= model_class.human_attribute_name(:id) %></th> -->
         <th><%= model_class.human_attribute_name(:title) %></th>
+        <th><%= model_class.human_attribute_name(:Source) %></th>
+        <th><%= model_class.human_attribute_name(:Index)%></th>
       </tr>
     </thead>
     <tbody>
       <% @problems.each do |problem| %>
         <tr>
-          <td><%= link_to problem.id, problem_path(problem) %></td>
+          <!-- <td><%= link_to problem.id, problem %></td> -->
           <td><%= link_to problem.title, problem %></td>
+          <td><%= problem.ptype %></td>
+          <td><%= link_to problem.pid, problem %></td>
         </tr>
       <% end %>
     </tbody>

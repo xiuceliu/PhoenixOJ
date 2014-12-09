@@ -10,7 +10,7 @@ group :development do
 end
 
 gem 'will_paginate', '~> 3.0.5'
-
+gem 'mechanize'
 
 group :production do
 	gem 'pg'
