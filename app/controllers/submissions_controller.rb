@@ -8,7 +8,7 @@ def submit_to_codeforces(index, source)
   agent.get("http://codeforces.com/enter")
   form = agent.page.forms[1]
   form.handle = "for_the_money"
-  form.password = "beyblade!@#@!"
+  form.password = "***"
   form.click_button
   page = agent.get("http://codeforces.com/problemset/submit")
 
