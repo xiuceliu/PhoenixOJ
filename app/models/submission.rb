@@ -18,7 +18,7 @@ class Submission < ActiveRecord::Base
     if res.present? and res != "All"
       scope = scope.where(:verdict => res)
     end
-    if lan.present?
+    if lan.present? and lan != "All"
       scope = scope.where(:language => lan)
     end
     

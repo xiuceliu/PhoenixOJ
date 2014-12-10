@@ -6,8 +6,8 @@
 <form id="filterform" class="form-inline" method="">
 <%= form_tag problems_path, :method => 'get' do %>
   <p>
-    Search keyword in title: <%= text_field_tag :kwd, params[:kwd], class: "input-small", placeholder: "Keyword" %>
-    <%= submit_tag "Search for Submission", :name => nil, class: "btn" %>
+    Search keyword in title: <%= text_field_tag :kwd, params[:kwd], class: "input", placeholder: "Keyword" %>
+    <%= submit_tag "Search for Problems", :name => nil, class: "btn btn-primary" %>
   </p>
 <% end %>
 </form>

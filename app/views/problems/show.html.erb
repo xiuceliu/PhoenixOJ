@@ -40,10 +40,14 @@
 
 <div class="functions tcenter" style="margin-bottom:20px">
   <div class="btn-group">
-    <a class="submitprob btn btn-primary" a data-toggle="modal" href="#submitwindow"> Submit </a>
+    <% if user_signed_in? then %>
+      <a class="btn btn-primary" a data-toggle="modal" href="#SubmitWindow"> Submit </a>
+    <% else %>
+      <a class="btn btn-primary" a data-toggle="modal" href="#SignInWindow"> Submit </a>
+    <% end %>
     
     <%= link_to "Status", status_path(:pid => @problem.id), :class => "btn" %>
-    <a class="btn" href="problem_stat.php?pid=1000"> Statistics </a>
+    <a class="btn" href="#"> Statistics </a>
     <%= link_to "Discuss", problem_discusses_path(@problem.id) , :class => "btn" %>
   </div>
 </div>
@@ -52,18 +56,16 @@
 </div>
 
 
-<div class="modal hide fade" id="submitwindow" aria-hidden="false">
+<div class="modal hide fade" id="SubmitWindow" aria-hidden="false">
   <div class="modal-header">
     <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
     <h4><%= "Submit Problem #{@problem.id}: #{@problem.title}" %></h4>
   </div>
   <div class="modal-body"><table width="100%">
     <%= form_for [@problem, @submission], :html => { :class => 'form-horizontal' } do |f| %>
-    <div class="control-group">
+    <div class = "control-group">
       <%= f.label :language, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :language, :class => 'text_field' %>
-      </div>
+      <%= f.select :language, options_for_select(ARR_CF_LANGUAGE), class: "input-medium" %>
     </div>
     <div class="control-group">
       <%= f.label :code, :class => 'control-label' %>

@@ -3,7 +3,7 @@ class ProblemsController < ApplicationController
   # GET /problems.json
   require 'will_paginate/array'
   def index
-    @problems = Problem.search(params[:kwd]).paginate :page => params[:page], :per_page => 10
+    @problems = Problem.search(params[:kwd]).paginate :page => params[:page], :per_page => 25
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @problems }

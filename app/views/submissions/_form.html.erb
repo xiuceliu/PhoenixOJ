@@ -9,8 +9,8 @@
     Username: <%= text_field_tag :usn, params[:usn], class: "input-small", placeholder: "Username" %>
     Problem ID: <%= text_field_tag :pid, params[:pid], class: "input-small", placeholder: "Problem ID" %>
     Result: <%= select_tag :res, options_for_select(ARR_VERDICT, params[:res]), class: "input" %>
-    Language: <%= text_field_tag :lan, params[:lan], class: "input-small", placeholder: "Language" %>
-    <%= submit_tag "Search for Submission", :name => nil, class: "btn" %>
+    Language: <%= select_tag :lan, options_for_select(ARR_LANGUAGE, params[:lan]), class: "input-medium" %>
+    <%= submit_tag "Search for Submission", :name => nil, class: "btn btn-primary" %>
   </p>
 <% end %>
 </form>
@@ -21,7 +21,7 @@
       <th><%= model_class.human_attribute_name(:Runid) %></th>
       <th><%= model_class.human_attribute_name(:Submitted_at) %></th>
       <th><%= model_class.human_attribute_name(:Username) %></th>
-      <th><%= model_class.human_attribute_name(:Problem_id) %></th>
+      <th><%= model_class.human_attribute_name("Problem") %></th>
       <th><%= model_class.human_attribute_name(:Language) %></th>
       <th><%= model_class.human_attribute_name(:Verdict) %></th>
       <th><%= model_class.human_attribute_name(:Time) %></th>
@@ -33,9 +33,9 @@
     <% @submissions.each do |submission| %>
       <tr>
         <td><%= submission.id %></td>
-        <td><%= submission.created_at %></td>
+        <td><%= submission.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
         <td><%= submission.user.username %></td>
-        <td><%= submission.problem_id %></td>
+        <td><%= link_to submission.problem_id, submission.problem %></td>
         <td><%= submission.language %></td>
         <td><%= submission.verdict %></td>
         <td><%= "#{submission.timeConsumedMillis} KB"%></td>
