@@ -167,7 +167,9 @@ DEPENDENCIES
   jquery-rails
   less-rails
   mechanize
+  nokogiri
   pg
+  rails (= 3.2.16)
   rails_12factor
   sass-rails (~> 3.2.3)
   sqlite3

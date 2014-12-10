@@ -4,10 +4,12 @@
 </div>
 
 <form id="filterform" class="form-inline" method="">
-<%= form_tag problems_path, :method => 'get' do %>
+<%= form_tag status_path, :method => 'get' do %>
   <p>
     Username: <%= text_field_tag :usn, params[:usn], class: "input-small", placeholder: "Username" %>
     Problem ID: <%= text_field_tag :pid, params[:pid], class: "input-small", placeholder: "Problem ID" %>
+    Result: <%= select_tag :res, options_for_select(ARR_VERDICT, params[:res]), class: "input" %>
+    Language: <%= text_field_tag :lan, params[:lan], class: "input-small", placeholder: "Language" %>
     <%= submit_tag "Search for Submission", :name => nil, class: "btn" %>
   </p>
 <% end %>

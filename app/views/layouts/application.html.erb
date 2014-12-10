@@ -59,12 +59,13 @@
             </ul>
           <% else %>
             <ul id="logoutbar" class="nav pull-right">
-              <!-- <li><%= link_to "Login", new_user_session_path %></li> -->
               <li><a data-toggle="modal" href="#myModal">Login</a></li>
               <li><%= link_to "Sign Up", new_user_registration_path %></li>
             </ul>
           <% end %>
-          <p class="pull-right navbar-text"><span id="servertime">2014-11-12 22:44:39</span>&nbsp;</p>
+          <p class="pull-right navbar-text"><span id="servertime"><%= Time.now.strftime("%Y-%m-%d %H:%M:%S")
+
+ %></span>&nbsp;</p>
         </div>
       </div>
     </div>

@@ -1,0 +1,471 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="X-Csrf-Token" content="a16a6560a74bbc70e8a8e29b93b0f0c5">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <meta http-equiv="profileName" content="c4">
+    <meta name="google-site-verification" content="OTd2dN5x4nS4OPknPI9JFg36fKxjqY0i1PSfFPv_J90">
+    <meta property="fb:admins" content="100001352546622">
+    <meta property="og:image" content="/static/images/codeforces-vk-square-en.png">
+    <meta property="og:title" content="Problem - 207B2 - Codeforces">
+    <meta property="og:site_name" content="Codeforces">
+    
+    <meta name="cc" content="slyx3rzyw4o0">
+    
+    <meta name="verify-reformal" content="f56f99fd7e087fb6ccb48ef2">
+    <title>Problem - 207B2 - Codeforces</title>
+        <meta name="description" content="Codeforces. Programming competitions and contests, programming community">
+        <meta name="keywords" content="programming algorithm contest competition informatics olympiads c++ java graphs vkcup">
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css" type="text/css" charset="utf-8">
+
+        <link href="//fonts.googleapis.com/css?family=Cuprum&amp;subset=latin,cyrillic" rel="stylesheet" type="text/css">
+
+
+    <link rel="shortcut icon" type="image/png" href="/static/favicon.png">
+
+    <!--CombineResourcesFilter-->
+    <link rel="stylesheet" href="/static/css/prettify.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/clear.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/style.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/ttypography.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/problem-statement.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/second-level-menu.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/roundbox.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/datatable.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/topic.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/table-form.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/jquery.jgrowl.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/facebox.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/jquery.wysiwyg.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/jquery.autocomplete.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/codeforces.datepick.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/colorbox.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/jquery.drafts.css" type="text/css" charset="utf-8">
+        <link rel="stylesheet" href="/static/css/sidebar-menu.css" type="text/css" charset="utf-8">
+        <link rel="stylesheet" href="/static/css/status.css" type="text/css" charset="utf-8">
+        <link rel="stylesheet" href="/static/css/community.css" type="text/css" charset="utf-8">
+
+    <script type="text/javascript" src="/static/js/prettify/prettify.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="/static/js/sockjs-0.2.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/vertxbus-1.2.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.lavalamp.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.jgrowl.js"></script>
+    <script type="text/javascript" src="/static/js/facebox.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.wysiwyg.js"></script>
+    <script type="text/javascript" src="/static/js/controls/wysiwyg.colorpicker.js"></script>
+    <script type="text/javascript" src="/static/js/controls/wysiwyg.table.js"></script>
+    <script type="text/javascript" src="/static/js/controls/wysiwyg.image.js"></script>
+    <script type="text/javascript" src="/static/js/controls/wysiwyg.link.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.datepick.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.ie6blocker.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.colorbox-min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.ba-bbq.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.drafts.js"></script>
+    <script type="text/javascript" src="/static/js/codeforces.js"></script>
+    <!--/CombineResourcesFilter-->
+
+    <link rel="stylesheet" href="/static/markitup/skins/markitup/style.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/markitup/sets/markdown/style.css" type="text/css" charset="utf-8">
+
+    <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+    
+    <script type="text/javascript" src="/static/markitup/jquery.markitup.js"></script>
+    <script type="text/javascript" src="/static/markitup/sets/markdown/set.js"></script>
+
+    <!--[if IE]>
+    <style>
+        #sidebar {
+            padding-left: 1em;
+            margin: 1em 1em 1em 0;
+        }
+    </style>
+    <![endif]-->
+
+
+</head>
+<body>
+<span style="display:none;" class="csrf-token" data-csrf="a16a6560a74bbc70e8a8e29b93b0f0c5"> </span>
+<div class="button-up" style="display: none; opacity: 0.7; width: 50px; height:100%; position: fixed; left: 0; top: 0; cursor: pointer; text-align: center; line-height: 35px; color: #d3dbe4; font-weight: bold; font-size: 30px;"><i class="icon-circle-arrow-up"></i></div>
+
+<!-- Codeforces JavaScripts. -->
+<script type="text/javascript">
+    if (window.parent.frames.length > 0) {
+        window.stop();
+    }
+</script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+    $.ajaxPrefilter(function(options, originalOptions, xhr) {
+        var csrf = Codeforces.getCsrfToken();
+
+        if (csrf) {
+            var data = originalOptions.data;
+            if (originalOptions.data !== undefined) {
+                if (Object.prototype.toString.call(originalOptions.data) === '[object String]') {
+                    data = $.deparam(originalOptions.data);
+                }
+            } else {
+                data = {};
+            }
+            options.data = $.param($.extend(data, { csrf_token: csrf }));
+        }
+    });
+
+    window.getCodeforcesServerTime = function(callback) {
+        $.post("/data/time", {}, callback, "json");
+    }
+
+    window.updateTypography = function () {
+        $("div.ttypography code").addClass("tt");
+        $("div.ttypography pre>code").addClass("prettyprint").removeClass("tt");
+        $("div.ttypography table").addClass("bordertable");
+        prettyPrint();
+    }
+
+    $.ajaxSetup({ scriptCharset: "utf-8" ,contentType: "application/x-www-form-urlencoded; charset=UTF-8", headers: {
+        'X-Csrf-Token': Codeforces.getCsrfToken()
+    }});
+
+    window.updateTypography();
+
+    Codeforces.signForms();
+
+    $(".second-level-menu-list").lavaLamp({
+        fx: "backout",
+        speed: 1000
+    });
+
+
+    Codeforces.countdown();
+    $("a[rel='photobox']").colorbox();
+
+
+        });
+    </script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-743380-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function () {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = (document.location.protocol == 'https:' ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<div id="body">
+        <!-- Frame: Header.ftl -->
+<div id="header" style="position:relative;">
+    <div style="float:left;">
+            <div style="padding:1em 0 0 2px;color:#C60C30;font-size:18px;font-weight:bold;">
+<a href="/abbyycup20"><img src="http://www.abbyy.ru/images/logo.gif"></a>
+<span style="padding:1.5em;position:relative;bottom:7px;">ABBYY Cup 2.0 is waiting for you!</span>
+</div>
+
+    </div>
+    <div class="lang-chooser">
+        <div style="text-align: right;">
+            <a href="?locale=en"><img src="/static/images/flags/24/gb.png" title="In English" alt="In English"></a>
+            <a href="?locale=ru"><img src="/static/images/flags/24/ru.png" title="По-русски" alt="По-русски"></a>
+        </div>
+        <div>
+                <a href="/enter">Enter</a>
+                 | 
+                <a href="/register">Register</a>
+                
+        </div>
+    </div>
+    <div style="font-size:0.8em;margin-top:0.25em;position:absolute;right:0;top:4.25em;">
+    </div>
+    <br style="clear: both;">
+</div>
+<!-- /Frame: Header.ftl -->
+        <!-- Frame: MainMenuFrame.ftl -->
+    <div class="roundbox menu-box" style="">
+            <div class="roundbox-lt"> </div>
+            <div class="roundbox-rt"> </div>
+            <div class="roundbox-lb"> </div>
+            <div class="roundbox-rb"> </div>
+<div class="menu-list-container">
+    <ul class="menu-list main-menu-list">
+                <li class=""><a href="/">Home</a></li>
+                <li class=""><a href="/contests">Contests</a></li>
+                <li class=""><a href="/gyms">Gym</a></li>
+                <li class="current"><a href="/problemset">Problemset</a></li>
+                <li class=""><a href="/groups">Groups</a></li>
+                <li class=""><a href="/ratings">Rating</a></li>
+                <li class=""><a href="/api/help">API</a></li>
+                <li class=""><a href="/help">Help</a></li>
+                <li class=""><a href="/bayan2015">Bayan 2015 <img class="icon" src="http://stat.codeforces.ru/images/icons/cup.png"></a></li>
+                <li class=""><a href="/rcc2014">RCC <img class="icon" src="http://stat.codeforces.ru/images/icons/cup.png"></a></li>
+    </ul>
+    <form method="post" action="/search">
+<input type="hidden" name="csrf_token" value="a16a6560a74bbc70e8a8e29b93b0f0c5">
+        <input class="search" name="query" data-isplaceholder="true" value="Search by tag">
+    </form>
+    <br style="clear: both;">
+</div>
+    </div>
+<!-- /Frame: MainMenuFrame.ftl -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("input.search").focus(function() {
+                if ($(this).attr("data-isPlaceholder") === "true") {
+                    $(this).val("");
+                    $(this).removeAttr("data-isPlaceholder");
+                }
+            });
+        });
+    </script>
+        <br style="height: 3em; clear: both;">
+        <div style="position: relative;">
+                    <div id="sidebar">
+<!-- Frame: ComplexFrame.ftl --><!-- Frame: ProblemExecutionFactorWarningSidebarFrame.ftl -->
+    <div class="roundbox highlight-blue sidebox" style="">
+            <div class="roundbox-lt"> </div>
+            <div class="roundbox-rt"> </div>
+        <div class="caption titled">→ Attention
+            <div class="top-links">
+            </div>
+        </div>
+    <div style="margin: 1em">
+        Package for this problem was not updated by the problem writer or Codeforces administration after we’ve upgraded the judging servers. To adjust the time limit constraint, solution execution time will be multiplied by 2. For example, if your solution works for 400 ms on judging servers, than value 800 ms will be displayed and used to determine the verdict.
+    </div>
+    </div>
+<!-- /Frame: ProblemExecutionFactorWarningSidebarFrame.ftl --><!-- Frame: ComplexFrame.ftl --><!-- Frame: ContestStateSidebarFrame.ftl -->
+    <div class="roundbox sidebox" style="">
+            <div class="roundbox-lt"> </div>
+            <div class="roundbox-rt"> </div>
+        <table class="rtable ">
+            <tbody>
+                <tr>
+                            <th class="left" style="width:100%;"><a style="color: black" href="/contest/207">Abbyy Cup 2.0 - Final (unofficial)</a></th>
+                </tr>
+                    <tr>
+                                <td class="left bottom" colspan="1"><span class="contest-state-phase">Finished</span></td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+<!-- /Frame: ContestStateSidebarFrame.ftl -->
+
+<!-- Frame: ProblemTagsFrame.ftl -->
+    <div class="roundbox sidebox" style="">
+            <div class="roundbox-lt"> </div>
+            <div class="roundbox-rt"> </div>
+        <div class="caption titled">→ Problem tags
+            <div class="top-links">
+            </div>
+        </div>
+<div style="padding: 0.5em;">
+        No tags yet
+    <div style="clear:both;text-align:right;font-size:11px;">
+            <span title="Please login into the Codeforces" class="notice">No tag edit access</span>
+    </div>
+</div>
+    </div>
+
+<form id="addTagForm" action="/data/problemTags" method="post" style="display:none;">
+<input type="hidden" name="csrf_token" value="a16a6560a74bbc70e8a8e29b93b0f0c5">
+    <input name="action" type="hidden" value="addTag">
+    <input name="problemId" type="hidden" value="1502">
+    <input name="tagName" type="hidden" value="">
+</form>
+
+<form id="removeTagForm" action="/data/problemTags" method="post" style="display:none;">
+<input type="hidden" name="csrf_token" value="a16a6560a74bbc70e8a8e29b93b0f0c5">
+    <input name="action" type="hidden" value="removeTag">
+    <input name="problemId" type="hidden" value="1502">
+    <input name="tagName" type="hidden" value="">
+</form>
+
+<script type="text/javascript">
+    $(".tag-box img").click(function () {
+        var tagName = $(this).attr("value");
+        Codeforces.confirm("Are you sure you want to remove this tag?", function () {
+            $("#removeTagForm input[name=tagName]").val(tagName);
+            $("#removeTagForm").submit();
+        }, function () {
+        }, "Yes", "No");
+    });
+
+    $("#addTagLink").click(function () {
+        $(this).hide();
+        $("#addTagLabel").show();
+        return false;
+    });
+
+    $("#addTagSelect").change(function () {
+        var tagName = $(this).val();
+        if (tagName === "") {
+            $("#addTagLabel").hide();
+            $("#addTagLink").show();
+        } else {
+            $("#addTagForm input[name=tagName]").val(tagName);
+            $("#addTagForm").submit();
+        }
+    });
+</script>
+<!-- /Frame: ProblemTagsFrame.ftl -->
+<!-- /Frame: ComplexFrame.ftl --><!-- /Frame: ComplexFrame.ftl -->
+</div>
+                    <div id="content" class="content-with-sidebar">
+                <div class="second-level-menu">
+<!-- Frame: SecondLevelMenuFrame.ftl -->
+<ul class="second-level-menu-list">
+        <li class="current"><a href="/problemset">Problems</a></li>
+        <li><a href="/problemset/submit">Submit</a></li>
+        <li><a href="/problemset/status">Status</a></li>
+        <li><a href="/problemset/standings">Standings</a></li>
+        <li><a href="/problemset/customtest">Custom test</a></li>
+</ul>
+<!-- /Frame: SecondLevelMenuFrame.ftl -->
+</div>
+<!-- Frame: ProblemViewFrame.ftl -->
+<div class="problemindexholder" problemindex="B2">
+<div class="ttypography"><div class="problem-statement">
+<div class="header">
+<div class="title">B2. Military Trainings</div>
+<div class="time-limit">
+<div class="property-title">time limit per test</div>3 seconds</div>
+<div class="memory-limit">
+<div class="property-title">memory limit per test</div>256 megabytes</div>
+<div class="input-file">
+<div class="property-title">input</div>standard input</div>
+<div class="output-file">
+<div class="property-title">output</div>standard output</div>
+</div>
+<div>
+<p>The Smart Beaver from ABBYY started cooperating with the Ministry of Defence. Now they train soldiers to move armoured columns. The training involves testing a new type of tanks that can transmit information. To test the new type of tanks, the training has a special exercise, its essence is as follows.</p>
+<p>Initially, the column consists of <span class="tex-span"><i>n</i></span> tanks sequentially numbered from <span class="tex-span">1</span> to <span class="tex-span"><i>n</i></span> in the order of position in the column from its beginning to its end. During the whole exercise, exactly <span class="tex-span"><i>n</i></span> messages must be transferred from the beginning of the column to its end.</p>
+<p>Transferring one message is as follows. The tank that goes first in the column transmits the message to some tank in the column. The tank which received the message sends it further down the column. The process is continued until the last tank receives the message. It is possible that not all tanks in the column will receive the message — it is important that the last tank in the column should receive the message.</p>
+<p>After the last tank (tank number <span class="tex-span"><i>n</i></span>) receives the message, it moves to the beginning of the column and sends another message to the end of the column in the same manner. When the message reaches the last tank (tank number <span class="tex-span"><i>n</i> - 1</span>), that tank moves to the beginning of the column and sends the next message to the end of the column, and so on. Thus, the exercise is completed when the tanks in the column return to their original order, that is, immediately after tank number <span class="tex-span">1</span> moves to the beginning of the column.</p>
+<p>If the tanks were initially placed in the column in the order <span class="tex-span">1, 2, ..., <i>n</i></span>, then after the first message their order changes to <span class="tex-span"><i>n</i>, 1, ..., <i>n</i> - 1</span>, after the second message it changes to <span class="tex-span"><i>n</i> - 1, <i>n</i>, 1, ..., <i>n</i> - 2</span>, and so on.</p>
+<p>The tanks are constructed in a very peculiar way. The tank with number <span class="tex-span"><i>i</i></span> is characterized by one integer <span class="tex-span"><i>a</i><sub class="lower-index"><i>i</i></sub></span>, which is called the <span class="tex-font-style-it">message receiving radius</span> of this tank.</p>
+<p>Transferring a message between two tanks takes one second, however, not always one tank can transmit a message to another one. Let's consider two tanks in the column such that the first of them is the <span class="tex-span"><i>i</i></span>-th in the column counting from the beginning, and the second one is the <span class="tex-span"><i>j</i></span>-th in the column, and suppose the second tank has number <span class="tex-span"><i>x</i></span>. Then the first tank can transmit a message to the second tank if <span class="tex-span"><i>i</i> &lt; <i>j</i></span> and <span class="tex-span"><i>i</i> ≥ <i>j</i> - <i>a</i><sub class="lower-index"><i>x</i></sub></span>.</p>
+<p>The Ministry of Defense (and soon the Smart Beaver) faced the question of how to organize the training efficiently. The exercise should be finished as quickly as possible. We'll neglect the time that the tanks spend on moving along the column, since improving the tanks' speed is not a priority for this training.</p>
+<p>You are given the number of tanks, as well as the message receiving radii of all tanks. You must help the Smart Beaver and organize the transferring of messages in a way that makes the total transmission time of all messages as small as possible.</p>
+</div>
+<div class="input-specification">
+<div class="section-title">Input</div>
+<p>The first line contains integer <span class="tex-span"><i>n</i></span> — the number of tanks in the column. Each of the next <span class="tex-span"><i>n</i></span> lines contains one integer <span class="tex-span"><i>a</i><sub class="lower-index"><i>i</i></sub></span> (<span class="tex-span">1 ≤ <i>a</i><sub class="lower-index"><i>i</i></sub> ≤ 250000</span>, <span class="tex-span">1 ≤ <i>i</i> ≤ <i>n</i></span>) — the message receiving radii of the tanks in the order from tank <span class="tex-span">1</span> to tank <span class="tex-span"><i>n</i></span> (let us remind you that initially the tanks are located in the column in ascending order of their numbers).</p>
+<p>To get the full points for the first group of tests it is sufficient to solve the problem with <span class="tex-span">2 ≤ <i>n</i> ≤ 300</span>.</p>
+<p>To get the full points for the second group of tests it is sufficient to solve the problem with <span class="tex-span">2 ≤ <i>n</i> ≤ 10000</span>.</p>
+<p>To get the full points for the third group of tests it is sufficient to solve the problem with <span class="tex-span">2 ≤ <i>n</i> ≤ 250000</span>.</p>
+</div>
+<div class="output-specification">
+<div class="section-title">Output</div>
+<p>Print a single integer — the minimum possible total time of transmitting the messages.</p>
+<p>Please, do not use the <span class="tex-font-style-tt">%lld</span> specifier to read or write 64-bit integers in С++. It is preferred to use the <span class="tex-font-style-tt">cin</span>, <span class="tex-font-style-tt">cout</span> streams or the <span class="tex-font-style-tt">%I64d</span> specifier.</p>
+</div>
+<div class="sample-tests">
+<div class="section-title">Sample test(s)</div>
+<div class="sample-test">
+<div class="input">
+<div class="title">Input</div>
+<pre>3<br>2<br>1<br>1<br></pre>
+</div>
+<div class="output">
+<div class="title">Output</div>
+<pre>5<br></pre>
+</div>
+<div class="input">
+<div class="title">Input</div>
+<pre>5<br>2<br>2<br>2<br>2<br>2<br></pre>
+</div>
+<div class="output">
+<div class="title">Output</div>
+<pre>10<br></pre>
+</div>
+</div>
+</div>
+<div class="note">
+<div class="section-title">Note</div>
+<p>In the first sample the original order of tanks is <span class="tex-span">1, 2, 3</span>. The first tank sends a message to the second one, then the second tank sends it to the third one — it takes two seconds. The third tank moves to the beginning of the column and the order of tanks now is <span class="tex-span">3, 1, 2</span>. The third tank sends a message to the first one, then the first one sends it to the second one — it takes two more seconds. The second tank moves to the beginning and the order of the tanks is now <span class="tex-span">2, 3, 1</span>. With this arrangement, the second tank can immediately send a message to the first one, since the message receiving radius of the first tank is large enough — it takes one second. Finally, the tanks return to their original order <span class="tex-span">1, 2, 3</span>. In total, the exercise takes <span class="tex-span">5</span> seconds.</p>
+<p>In the second sample, all five tanks are the same and sending a single message takes two seconds, so in total the exercise takes <span class="tex-span">10</span> seconds.</p>
+</div>
+</div></div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        function endsWith(string, suffix) {
+            return string.indexOf(suffix, string.length - suffix.length) !== -1;
+        }
+
+        var inputFileDiv = $("div.input-file");
+        var inputFile = inputFileDiv.text();
+        var outputFileDiv = $("div.output-file");
+        var outputFile = outputFileDiv.text();
+
+        if (!endsWith(inputFile, "standard input")) {
+            inputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        if (!endsWith(outputFile, "standard output")) {
+            outputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        var titleDiv = $("div.header div.title");
+
+
+
+    });
+</script>
+<!-- /Frame: ProblemViewFrame.ftl -->            </div>
+        </div>
+<!-- Frame: Footer.ftl -->
+<br style="clear: both;">
+<div id="footer">
+    <div>
+<a href="http://codeforces.com/">Codeforces</a> (c) Copyright 2010-2014 Mike Mirzayanov</div>
+    <div>The only programming contests Web 2.0 platform</div>
+    <div>Server time: 2014-12-10 11:15:08 (c4).</div>
+</div>
+<!-- /Frame: Footer.ftl -->    <script type="text/javascript">
+        $(document).ready(function() {
+            if ($(window).width() < 1600) {
+                $('.button-up').css('width', '30px').css('line-height', '30px').css('font-size', '20px');
+            }
+
+            if ($(window).width() >= 1200) {
+                $ (window).scroll (function () {
+                    if ($ (this).scrollTop () > 100) {
+                        $ ('.button-up').fadeIn();
+                    } else {
+                        $ ('.button-up').fadeOut();
+                    }
+                });
+
+                $('.button-up').click(function(){
+                    $('body,html').animate({
+                        scrollTop: 0
+                    }, 500);
+                    return false;
+                });
+
+                $('.button-up').hover(function() {
+                    $(this).animate({
+                        'opacity':'1',
+                    }).css({'background-color':'#e7ebf0','color':'#6a86a4'});
+                }, function(){
+                    $(this).animate({
+                        'opacity':'0.7'
+                    }).css({'background':'none','color':'#d3dbe4'});;
+                });
+            }
+            Codeforces.focusOnError();
+        });
+    </script>
+</div>
+</body>
+</html>

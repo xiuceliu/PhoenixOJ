@@ -1,0 +1,501 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="X-Csrf-Token" content="e7b1ff4e80cf438e6390d30a8a1db03f">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <meta http-equiv="profileName" content="c4">
+    <meta name="google-site-verification" content="OTd2dN5x4nS4OPknPI9JFg36fKxjqY0i1PSfFPv_J90">
+    <meta property="fb:admins" content="100001352546622">
+    <meta property="og:image" content="/static/images/codeforces-vk-square-en.png">
+    <meta property="og:title" content="Problem - 234E - Codeforces">
+    <meta property="og:site_name" content="Codeforces">
+    
+    <meta name="cc" content="274zudyysn2n">
+    
+    <meta name="verify-reformal" content="f56f99fd7e087fb6ccb48ef2">
+    <title>Problem - 234E - Codeforces</title>
+        <meta name="description" content="Codeforces. Programming competitions and contests, programming community">
+        <meta name="keywords" content="programming algorithm contest competition informatics olympiads c++ java graphs vkcup">
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css" type="text/css" charset="utf-8">
+
+        <link href="//fonts.googleapis.com/css?family=Cuprum&amp;subset=latin,cyrillic" rel="stylesheet" type="text/css">
+
+
+    <link rel="shortcut icon" type="image/png" href="/static/favicon.png">
+
+    <!--CombineResourcesFilter-->
+    <link rel="stylesheet" href="/static/css/prettify.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/clear.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/style.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/ttypography.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/problem-statement.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/second-level-menu.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/roundbox.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/datatable.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/topic.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/table-form.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/jquery.jgrowl.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/facebox.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/jquery.wysiwyg.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/jquery.autocomplete.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/codeforces.datepick.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/colorbox.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/css/jquery.drafts.css" type="text/css" charset="utf-8">
+        <link rel="stylesheet" href="/static/css/sidebar-menu.css" type="text/css" charset="utf-8">
+        <link rel="stylesheet" href="/static/css/status.css" type="text/css" charset="utf-8">
+        <link rel="stylesheet" href="/static/css/community.css" type="text/css" charset="utf-8">
+
+    <script type="text/javascript" src="/static/js/prettify/prettify.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="/static/js/sockjs-0.2.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/vertxbus-1.2.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.lavalamp.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.jgrowl.js"></script>
+    <script type="text/javascript" src="/static/js/facebox.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.wysiwyg.js"></script>
+    <script type="text/javascript" src="/static/js/controls/wysiwyg.colorpicker.js"></script>
+    <script type="text/javascript" src="/static/js/controls/wysiwyg.table.js"></script>
+    <script type="text/javascript" src="/static/js/controls/wysiwyg.image.js"></script>
+    <script type="text/javascript" src="/static/js/controls/wysiwyg.link.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.datepick.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.ie6blocker.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.colorbox-min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.ba-bbq.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.drafts.js"></script>
+    <script type="text/javascript" src="/static/js/codeforces.js"></script>
+    <!--/CombineResourcesFilter-->
+
+    <link rel="stylesheet" href="/static/markitup/skins/markitup/style.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" href="/static/markitup/sets/markdown/style.css" type="text/css" charset="utf-8">
+
+    <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+    
+    <script type="text/javascript" src="/static/markitup/jquery.markitup.js"></script>
+    <script type="text/javascript" src="/static/markitup/sets/markdown/set.js"></script>
+
+    <!--[if IE]>
+    <style>
+        #sidebar {
+            padding-left: 1em;
+            margin: 1em 1em 1em 0;
+        }
+    </style>
+    <![endif]-->
+
+
+</head>
+<body>
+<span style="display:none;" class="csrf-token" data-csrf="e7b1ff4e80cf438e6390d30a8a1db03f"> </span>
+<div class="button-up" style="display: none; opacity: 0.7; width: 50px; height:100%; position: fixed; left: 0; top: 0; cursor: pointer; text-align: center; line-height: 35px; color: #d3dbe4; font-weight: bold; font-size: 30px;"><i class="icon-circle-arrow-up"></i></div>
+
+<!-- Codeforces JavaScripts. -->
+<script type="text/javascript">
+    if (window.parent.frames.length > 0) {
+        window.stop();
+    }
+</script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+    $.ajaxPrefilter(function(options, originalOptions, xhr) {
+        var csrf = Codeforces.getCsrfToken();
+
+        if (csrf) {
+            var data = originalOptions.data;
+            if (originalOptions.data !== undefined) {
+                if (Object.prototype.toString.call(originalOptions.data) === '[object String]') {
+                    data = $.deparam(originalOptions.data);
+                }
+            } else {
+                data = {};
+            }
+            options.data = $.param($.extend(data, { csrf_token: csrf }));
+        }
+    });
+
+    window.getCodeforcesServerTime = function(callback) {
+        $.post("/data/time", {}, callback, "json");
+    }
+
+    window.updateTypography = function () {
+        $("div.ttypography code").addClass("tt");
+        $("div.ttypography pre>code").addClass("prettyprint").removeClass("tt");
+        $("div.ttypography table").addClass("bordertable");
+        prettyPrint();
+    }
+
+    $.ajaxSetup({ scriptCharset: "utf-8" ,contentType: "application/x-www-form-urlencoded; charset=UTF-8", headers: {
+        'X-Csrf-Token': Codeforces.getCsrfToken()
+    }});
+
+    window.updateTypography();
+
+    Codeforces.signForms();
+
+    $(".second-level-menu-list").lavaLamp({
+        fx: "backout",
+        speed: 1000
+    });
+
+
+    Codeforces.countdown();
+    $("a[rel='photobox']").colorbox();
+
+
+        });
+    </script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-743380-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function () {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = (document.location.protocol == 'https:' ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<div id="body">
+        <!-- Frame: Header.ftl -->
+<div id="header" style="position:relative;">
+    <div style="float:left;">
+            <a href="/"><img src="/static/images/codeforces-logo-with-telegram.png"></a>
+    </div>
+    <div class="lang-chooser">
+        <div style="text-align: right;">
+            <a href="?locale=en"><img src="/static/images/flags/24/gb.png" title="In English" alt="In English"></a>
+            <a href="?locale=ru"><img src="/static/images/flags/24/ru.png" title="По-русски" alt="По-русски"></a>
+        </div>
+        <div>
+                <a href="/enter">Enter</a>
+                 | 
+                <a href="/register">Register</a>
+                
+        </div>
+    </div>
+    <div style="font-size:0.8em;margin-top:0.25em;position:absolute;right:0;top:4.25em;">
+    </div>
+    <br style="clear: both;">
+</div>
+<!-- /Frame: Header.ftl -->
+        <!-- Frame: MainMenuFrame.ftl -->
+    <div class="roundbox menu-box" style="">
+            <div class="roundbox-lt"> </div>
+            <div class="roundbox-rt"> </div>
+            <div class="roundbox-lb"> </div>
+            <div class="roundbox-rb"> </div>
+<div class="menu-list-container">
+    <ul class="menu-list main-menu-list">
+                <li class=""><a href="/">Home</a></li>
+                <li class=""><a href="/contests">Contests</a></li>
+                <li class=""><a href="/gyms">Gym</a></li>
+                <li class="current"><a href="/problemset">Problemset</a></li>
+                <li class=""><a href="/groups">Groups</a></li>
+                <li class=""><a href="/ratings">Rating</a></li>
+                <li class=""><a href="/api/help">API</a></li>
+                <li class=""><a href="/help">Help</a></li>
+                <li class=""><a href="/bayan2015">Bayan 2015 <img class="icon" src="http://stat.codeforces.ru/images/icons/cup.png"></a></li>
+                <li class=""><a href="/rcc2014">RCC <img class="icon" src="http://stat.codeforces.ru/images/icons/cup.png"></a></li>
+    </ul>
+    <form method="post" action="/search">
+<input type="hidden" name="csrf_token" value="e7b1ff4e80cf438e6390d30a8a1db03f">
+        <input class="search" name="query" data-isplaceholder="true" value="Search by tag">
+    </form>
+    <br style="clear: both;">
+</div>
+    </div>
+<!-- /Frame: MainMenuFrame.ftl -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("input.search").focus(function() {
+                if ($(this).attr("data-isPlaceholder") === "true") {
+                    $(this).val("");
+                    $(this).removeAttr("data-isPlaceholder");
+                }
+            });
+        });
+    </script>
+        <br style="height: 3em; clear: both;">
+        <div style="position: relative;">
+                    <div id="sidebar">
+<!-- Frame: ComplexFrame.ftl --><!-- Frame: ProblemExecutionFactorWarningSidebarFrame.ftl -->
+    <div class="roundbox highlight-blue sidebox" style="">
+            <div class="roundbox-lt"> </div>
+            <div class="roundbox-rt"> </div>
+        <div class="caption titled">→ Attention
+            <div class="top-links">
+            </div>
+        </div>
+    <div style="margin: 1em">
+        Package for this problem was not updated by the problem writer or Codeforces administration after we’ve upgraded the judging servers. To adjust the time limit constraint, solution execution time will be multiplied by 2. For example, if your solution works for 400 ms on judging servers, than value 800 ms will be displayed and used to determine the verdict.
+    </div>
+    </div>
+<!-- /Frame: ProblemExecutionFactorWarningSidebarFrame.ftl --><!-- Frame: ComplexFrame.ftl --><!-- Frame: ContestStateSidebarFrame.ftl -->
+    <div class="roundbox sidebox" style="">
+            <div class="roundbox-lt"> </div>
+            <div class="roundbox-rt"> </div>
+        <table class="rtable ">
+            <tbody>
+                <tr>
+                            <th class="left" style="width:100%;"><a style="color: black" href="/contest/234">Codeforces Round #145 (Div. 2, ACM-ICPC Rules)</a></th>
+                </tr>
+                    <tr>
+                                <td class="left bottom" colspan="1"><span class="contest-state-phase">Finished</span></td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+<!-- /Frame: ContestStateSidebarFrame.ftl -->
+
+<!-- Frame: ProblemTagsFrame.ftl -->
+    <div class="roundbox sidebox" style="">
+            <div class="roundbox-lt"> </div>
+            <div class="roundbox-rt"> </div>
+        <div class="caption titled">→ Problem tags
+            <div class="top-links">
+            </div>
+        </div>
+<div style="padding: 0.5em;">
+    <div class="roundbox " style="margin:2px; padding:0 3px 2px 3px; background-color:#f0f0f0;float:left;">
+            <div class="roundbox-lt"> </div>
+            <div class="roundbox-rt"> </div>
+            <div class="roundbox-lb"> </div>
+            <div class="roundbox-rb"> </div>
+<span class="tag-box" style="font-size:12px;" title="Implementation problems, programming technics, simulation">
+    implementation
+</span>
+    </div>
+    <div style="clear:both;text-align:right;font-size:11px;">
+            <span title="Please login into the Codeforces" class="notice">No tag edit access</span>
+    </div>
+</div>
+    </div>
+
+<form id="addTagForm" action="/data/problemTags" method="post" style="display:none;">
+<input type="hidden" name="csrf_token" value="e7b1ff4e80cf438e6390d30a8a1db03f">
+    <input name="action" type="hidden" value="addTag">
+    <input name="problemId" type="hidden" value="1959">
+    <input name="tagName" type="hidden" value="">
+</form>
+
+<form id="removeTagForm" action="/data/problemTags" method="post" style="display:none;">
+<input type="hidden" name="csrf_token" value="e7b1ff4e80cf438e6390d30a8a1db03f">
+    <input name="action" type="hidden" value="removeTag">
+    <input name="problemId" type="hidden" value="1959">
+    <input name="tagName" type="hidden" value="">
+</form>
+
+<script type="text/javascript">
+    $(".tag-box img").click(function () {
+        var tagName = $(this).attr("value");
+        Codeforces.confirm("Are you sure you want to remove this tag?", function () {
+            $("#removeTagForm input[name=tagName]").val(tagName);
+            $("#removeTagForm").submit();
+        }, function () {
+        }, "Yes", "No");
+    });
+
+    $("#addTagLink").click(function () {
+        $(this).hide();
+        $("#addTagLabel").show();
+        return false;
+    });
+
+    $("#addTagSelect").change(function () {
+        var tagName = $(this).val();
+        if (tagName === "") {
+            $("#addTagLabel").hide();
+            $("#addTagLink").show();
+        } else {
+            $("#addTagForm input[name=tagName]").val(tagName);
+            $("#addTagForm").submit();
+        }
+    });
+</script>
+<!-- /Frame: ProblemTagsFrame.ftl --><!-- Frame: ContestResourcesSidebarFrame.ftl -->
+<style type="text/css">
+#new-resource-form tr td {
+padding-top: 0.5em;
+}
+#new-resource-form input:not([type="submit"]) {
+font-size: 0.8em;
+}
+#new-resource-form select {
+font-size: 0.8em;
+}
+</style>
+<div class="roundbox sidebox sidebar-menu" style="">
+<div class="roundbox-lt"> </div>
+<div class="roundbox-rt"> </div>
+<div class="caption titled">→ Contest materials
+<div class="top-links">
+</div>
+</div>
+<ul>
+<li>
+<span>
+<a href="/blog/entry/5531" title="Codeforces Round #145 (ACM-ICPC Rules)" target="_blank">Announcement</a>
+</span>
+<span style="float: right;">
+<img class="delete-resource-link" resourceid="1300" resourcename="Codeforces Round #145 (ACM-ICPC Rules)" resourcemanual="true" src="/static/images/icons/close-10x10.png" style="position: relative;bottom: -1px;left: 1px;cursor: pointer;">
+</span>
+<div style="clear: both;"></div>
+</li>
+</ul>
+</div>
+<!-- /Frame: ContestResourcesSidebarFrame.ftl --><!-- /Frame: ComplexFrame.ftl --><!-- /Frame: ComplexFrame.ftl -->
+</div>
+                    <div id="content" class="content-with-sidebar">
+                <div class="second-level-menu">
+<!-- Frame: SecondLevelMenuFrame.ftl -->
+<ul class="second-level-menu-list">
+        <li class="current"><a href="/problemset">Problems</a></li>
+        <li><a href="/problemset/submit">Submit</a></li>
+        <li><a href="/problemset/status">Status</a></li>
+        <li><a href="/problemset/standings">Standings</a></li>
+        <li><a href="/problemset/customtest">Custom test</a></li>
+</ul>
+<!-- /Frame: SecondLevelMenuFrame.ftl -->
+</div>
+<!-- Frame: ProblemViewFrame.ftl -->
+<div class="problemindexholder" problemindex="E">
+<div class="ttypography"><div class="problem-statement">
+<div class="header">
+<div class="title">E. Champions' League</div>
+<div class="time-limit">
+<div class="property-title">time limit per test</div>1 second</div>
+<div class="memory-limit">
+<div class="property-title">memory limit per test</div>256 megabytes</div>
+<div class="input-file">
+<div class="property-title">input</div>input.txt</div>
+<div class="output-file">
+<div class="property-title">output</div>output.txt</div>
+</div>
+<div>
+<p>In the autumn of this year, two Russian teams came into the group stage of the most prestigious football club competition in the world — the UEFA Champions League. Now, these teams have already started to play in the group stage and are fighting for advancing to the playoffs. In this problem we are interested in the draw stage, the process of sorting teams into groups.</p>
+<p>The process of the draw goes as follows (the rules that are described in this problem, are somehow simplified compared to the real life). Suppose <span class="tex-span"><i>n</i></span> teams will take part in the group stage (<span class="tex-span"><i>n</i></span> is divisible by four). The teams should be divided into groups of four. Let's denote the number of groups as <span class="tex-span"><i>m</i></span> (<img align="middle" class="tex-formula" src="http://espresso.codeforces.com/13019141edafe189dbacd60412f77f63699d44aa.png">). Each team has a rating — an integer characterizing the team's previous achievements. The teams are sorted by the rating's decreasing (no two teams have the same rating).</p>
+<p>After that four "baskets" are formed, each of which will contain <span class="tex-span"><i>m</i></span> teams: the first <span class="tex-span"><i>m</i></span> teams with the highest rating go to the first basket, the following <span class="tex-span"><i>m</i></span> teams go to the second one, and so on.</p>
+<p>Then the following procedure repeats <span class="tex-span"><i>m</i> - 1</span> times. A team is randomly taken from each basket, first from the first basket, then from the second, then from the third, and at last, from the fourth. The taken teams form another group. After that, they are <span class="tex-font-style-bf">removed</span> from their baskets.</p>
+<p>The four teams remaining in the baskets after <span class="tex-span">(<i>m</i> - 1)</span> such procedures are performed, form the last group.</p>
+<p>In the real draw the random selection of teams from the basket is performed by people — as a rule, the well-known players of the past. As we have none, we will use a random number generator, which is constructed as follows. Its parameters are four positive integers <span class="tex-span"><i>x</i>, <i>a</i>, <i>b</i>, <i>c</i></span>. Every time there is a call to the random number generator, it produces the following actions:</p>
+<ul> <li> calculates <img align="middle" class="tex-formula" src="http://espresso.codeforces.com/44744603ac8523bac49217521d90f292153f5ac7.png">; </li>
+<li> replaces parameter <span class="tex-span"><i>x</i></span> by value <span class="tex-span"><i>y</i></span> (assigns <img align="middle" class="tex-formula" src="http://espresso.codeforces.com/810fe5b3c3f14483992c0349a68e310af9dc33a6.png">); </li>
+<li> returns <span class="tex-span"><i>x</i></span> as another random number. </li>
+</ul>
+<p>Operation <img align="middle" class="tex-formula" src="http://espresso.codeforces.com/aaf97e0135932f06441d41a3e2bc9a1eb624ba0b.png"> means taking the remainder after division: <img align="middle" class="tex-formula" src="http://espresso.codeforces.com/fdf2c6c9b006bda0fc4ecb27e3a247928900304f.png">, <img align="middle" class="tex-formula" src="http://espresso.codeforces.com/c7f45e6d2540ce9ce9c5f6930f24d24754ca4cd6.png">.</p>
+<p>A random number generator will be used in the draw as follows: each time we need to randomly choose a team from the basket, it will generate a random number <span class="tex-span"><i>k</i></span>. The teams that yet remain in the basket are considered numbered with consecutive integers from <span class="tex-span">0</span> to <span class="tex-span"><i>s</i> - 1</span>, in the order of decreasing rating, where <span class="tex-span"><i>s</i></span> is the current size of the basket. Then a team number <img align="middle" class="tex-formula" src="http://espresso.codeforces.com/3d2af9d6ee6eb0c1d0c13528425cf2054334014f.png"> is taken from the basket.</p>
+<p>Given a list of teams and the parameters of the random number generator, determine the result of the draw. </p>
+</div>
+<div class="input-specification">
+<div class="section-title">Input</div>
+<p>The first input line contains integer <span class="tex-span"><i>n</i></span> (<span class="tex-span">4 ≤ <i>n</i> ≤ 64</span>, <span class="tex-span"><i>n</i></span> is divisible by four) — the number of teams that take part in the sorting. The second line contains four space-separated integers <span class="tex-span"><i>x</i>, <i>a</i>, <i>b</i>, <i>c</i></span> (<span class="tex-span">1 ≤ <i>x</i>, <i>a</i>, <i>b</i>, <i>c</i> ≤ 1000</span>) — the parameters of the random number generator. Each of the following <span class="tex-span"><i>n</i></span> lines describes one team. The description consists of the name of the team and its rating, separated by a single space. The name of a team consists of uppercase and lowercase English letters and has length from 1 to 20 characters. A team's rating is an integer from 0 to 1000. All teams' names are distinct. All team's ratings are also distinct.</p>
+</div>
+<div class="output-specification">
+<div class="section-title">Output</div>
+<p>Print the way the teams must be sorted into groups. Print the groups in the order, in which they are formed in the sorting. Number the groups by consecutive uppercase English letters, starting from letter <span class="tex-font-style-tt">'A'</span>. Inside each group print the teams' names one per line, in the order of decreasing of the teams' rating. See samples for a better understanding of the output format.</p>
+</div>
+<div class="sample-tests">
+<div class="section-title">Sample test(s)</div>
+<div class="sample-test">
+<div class="input">
+<div class="title">Input</div>
+<pre>8<br>1 3 1 7<br>Barcelona 158<br>Milan 90<br>Spartak 46<br>Anderlecht 48<br>Celtic 32<br>Benfica 87<br>Zenit 79<br>Malaga 16<br></pre>
+</div>
+<div class="output">
+<div class="title">Output</div>
+<pre>Group A:<br>Barcelona<br>Benfica<br>Spartak<br>Celtic<br>Group B:<br>Milan<br>Zenit<br>Anderlecht<br>Malaga<br></pre>
+</div>
+</div>
+</div>
+<div class="note">
+<div class="section-title">Note</div>
+<p>In the given sample the random number generator will be executed four times: </p>
+<ul> <li> <img align="middle" class="tex-formula" src="http://espresso.codeforces.com/2d76d911e7446d6db4b0be2679ce6e5ab930ab92.png">, </li>
+<li> <img align="middle" class="tex-formula" src="http://espresso.codeforces.com/cc339c0d810046d7adb9ef4339e48f5554842ae2.png">, </li>
+<li> <img align="middle" class="tex-formula" src="http://espresso.codeforces.com/74fb01e5b91f6c73ead806139c45f3e73fa1232d.png">, </li>
+<li> <img align="middle" class="tex-formula" src="http://espresso.codeforces.com/f8a9ac4805dfae22b7d7a65c5daa8f4cc5a21a5a.png">. </li>
+</ul>
+</div>
+</div></div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        function endsWith(string, suffix) {
+            return string.indexOf(suffix, string.length - suffix.length) !== -1;
+        }
+
+        var inputFileDiv = $("div.input-file");
+        var inputFile = inputFileDiv.text();
+        var outputFileDiv = $("div.output-file");
+        var outputFile = outputFileDiv.text();
+
+        if (!endsWith(inputFile, "standard input")) {
+            inputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        if (!endsWith(outputFile, "standard output")) {
+            outputFileDiv.attr("style", "font-weight: bold");
+        }
+
+        var titleDiv = $("div.header div.title");
+
+
+
+    });
+</script>
+<!-- /Frame: ProblemViewFrame.ftl -->            </div>
+        </div>
+<!-- Frame: Footer.ftl -->
+<br style="clear: both;">
+<div id="footer">
+    <div>
+<a href="http://codeforces.com/">Codeforces</a> (c) Copyright 2010-2014 Mike Mirzayanov</div>
+    <div>The only programming contests Web 2.0 platform</div>
+    <div>Server time: 2014-12-10 11:11:10 (c4).</div>
+</div>
+<!-- /Frame: Footer.ftl -->    <script type="text/javascript">
+        $(document).ready(function() {
+            if ($(window).width() < 1600) {
+                $('.button-up').css('width', '30px').css('line-height', '30px').css('font-size', '20px');
+            }
+
+            if ($(window).width() >= 1200) {
+                $ (window).scroll (function () {
+                    if ($ (this).scrollTop () > 100) {
+                        $ ('.button-up').fadeIn();
+                    } else {
+                        $ ('.button-up').fadeOut();
+                    }
+                });
+
+                $('.button-up').click(function(){
+                    $('body,html').animate({
+                        scrollTop: 0
+                    }, 500);
+                    return false;
+                });
+
+                $('.button-up').hover(function() {
+                    $(this).animate({
+                        'opacity':'1',
+                    }).css({'background-color':'#e7ebf0','color':'#6a86a4'});
+                }, function(){
+                    $(this).animate({
+                        'opacity':'0.7'
+                    }).css({'background':'none','color':'#d3dbe4'});;
+                });
+            }
+            Codeforces.focusOnError();
+        });
+    </script>
+</div>
+</body>
+</html>

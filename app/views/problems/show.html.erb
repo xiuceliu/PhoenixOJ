@@ -1,62 +1,84 @@
 <%- model_class = Problem -%>
-<div class="page-header">
-  <h1>
-    <%=t '.title', :default => model_class.model_name.human.titleize %>
-    <%= @problem.id %>
-  </h1>
+
+
+
+<div id="page-content" class="container">
+<div class="row-fluid">
+
+<h2 style = "text-align:center"><%= "#{@problem.pid} - #{@problem.title}" %></h2>
+
+<div class="well tcenter" id="conditions">
+  <div class="span6">Time Limit: <%= @tml %>  MS</div>
+  <div class="span6">Memory Limit: <%= @mml %> MB</div>
+  64-bit integer IO format:
+  <span class="badge badge-inverse">%lld</span>&nbsp;&nbsp;&nbsp;&nbsp;Java class name: <span class="badge badge-inverse">Main</span>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
-  <dd><%= @problem.title %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:content) %>:</strong></dt>
-  <dd><%= @problem.content %></dd>
-</dl>
-
-
-<%= form_for [@problem, @submission], :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :language, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :language, :class => 'text_field' %>
-    </div>
+  <h3> Description </h3>
+  <div class="content-wrapper well">
+    <%= render :inline => @str_des.to_s %>
+    <div style="clear:both"></div>
   </div>
-  <div class="control-group">
-    <%= f.label :code, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :code, :class => 'text_area' %>
-    </div>
+
+  <h3> Input </h3>
+  <div class="content-wrapper well">
+    <%= render :inline => @str_input.to_s %>
+    <div style="clear:both"></div>
   </div>
-  <div class="controls">
-    <%= f.submit "Submit", :class => 'btn btn-primary' %>
+  
+  <h3> Output </h3>
+  <div class="content-wrapper well">
+    <%= render :inline => @str_output.to_s %>
+    <div style="clear:both"></div>
   </div>
-<% end %>
+
+  <h3> Sample </h3>
+  <pre class="content-wrapper">
+    <%= render :inline => @str_sample.to_s %>
+  </pre>
 
 
-
-
-
-
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              problems_path, :class => 'btn'  %>
-
-  <%= link_to t('.Status', :default => t("helpers.links.Status")),
-              status_path(:pid => @problem.id), :class => 'btn' %>
-    <%= link_to t('.Discuss', :default => t("helpers.links.Discuss")),
-              problem_discusses_path(@problem.id), :class => 'btn' %>
-      
-      <% if current_user %>
-        <% if current_user.admin? %>
-            <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_problem_path(@problem), :class => 'btn btn-danger' %>
-
-            <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              problem_path(@problem),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
-        <% end %>
-      <% end %>
+<div class="functions tcenter" style="margin-bottom:20px">
+  <div class="btn-group">
+    <a class="submitprob btn btn-primary" a data-toggle="modal" href="#submitwindow"> Submit </a>
+    
+    <%= link_to "Status", status_path(:pid => @problem.id), :class => "btn" %>
+    <a class="btn" href="problem_stat.php?pid=1000"> Statistics </a>
+    <%= link_to "Discuss", problem_discusses_path(@problem.id) , :class => "btn" %>
+  </div>
+</div>
 
 </div>
+</div>
+
+
+<div class="modal hide fade" id="submitwindow" aria-hidden="false">
+  <div class="modal-header">
+    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+    <h4><%= "Submit Problem #{@problem.id}: #{@problem.title}" %></h4>
+  </div>
+  <div class="modal-body"><table width="100%">
+    <%= form_for [@problem, @submission], :html => { :class => 'form-horizontal' } do |f| %>
+    <div class="control-group">
+      <%= f.label :language, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :language, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :code, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :code, :class => 'text_area input-block-level', :colspan => "2", :rows => "12" %>
+      </div>
+    </div>
+    <div class="modal-footer">
+    <div class="controls">
+      <%= f.submit "Submit", :class => 'btn btn-primary' %>
+    </div></div>
+        
+  <% end %>
+  </table></div>
+</div>
+
+
+

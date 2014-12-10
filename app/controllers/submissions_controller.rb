@@ -8,7 +8,7 @@ def submit_to_codeforces(index, source)
   agent.get("http://codeforces.com/enter")
   form = agent.page.forms[1]
   form.handle = "for_the_money"
-  form.password = "***"
+  form.password = "beyblade!@#@!"
   form.click_button
   page = agent.get("http://codeforces.com/problemset/submit")
 
@@ -22,13 +22,14 @@ def submit_to_codeforces(index, source)
 end
 
 class SubmissionsController < ApplicationController
-  
+
   before_filter :authenticate_user!, :except => [:index , :showall, :show]
 
   require 'will_paginate/array'
 
   def index
-    @submissions = Submission.search(params[:pid], params[:usn]).paginate :page => params[:page], :per_page => 10
+    
+    @submissions = Submission.search(params[:pid], params[:usn], params[:res], params[:lan]).paginate :page => params[:page], :per_page => 10
   end
 
   def show

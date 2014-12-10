@@ -15,6 +15,34 @@ class ProblemsController < ApplicationController
   def show
     @problem = Problem.find(params[:id])
     @submission = Submission.new(params[:submission])
+    @str = Nokogiri::HTML(File.open("Problems/Codeforces/#{@problem.pid}.txt", "r+"))
+
+
+
+# Get Time Limit
+  @str_tml = @str.css("html body div#body div div#content.content-with-sidebar div.problemindexholder div.ttypography div.problem-statement div.header div.time-limit").text
+  @tml = @str_tml.gsub!(/\D/, "").to_i * 1000
+
+# Get Memory Limit
+  @str_mml = @str.css("html body div#body div div#content.content-with-sidebar div.problemindexholder div.ttypography div.problem-statement div.header div.memory-limit").text
+  @mml = @str_mml.gsub!(/\D/, "").to_i
+
+# Get Description
+  @str_des = @str.css("html body div#body div div#content.content-with-sidebar div.problemindexholder div.ttypography div.problem-statement div:nth-child(2) p,
+  html body div#body div div#content.content-with-sidebar div.problemindexholder div.ttypography div.problem-statement div:nth-child(2) ul")
+
+# Get Input
+  @str_input = @str.css("html body div#body div div#content.content-with-sidebar div.problemindexholder div.ttypography div.problem-statement div.input-specification p,
+  html body div#body div div#content.content-with-sidebar div.problemindexholder div.ttypography div.problem-statement div.input-specification ul")
+
+# Get Output
+  @str_output = @str.css("html body div#body div div#content.content-with-sidebar div.problemindexholder div.ttypography div.problem-statement div.output-specification p,
+  html body div#body div div#content.content-with-sidebar div.problemindexholder div.ttypography div.problem-statement div.output-specification ul")
+
+# Get Sample
+  @str_sample = @str.css("html body div#body div div#content.content-with-sidebar div.problemindexholder div.ttypography div.problem-statement div.sample-tests div.sample-test")
+
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @problem }
