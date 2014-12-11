@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
   <title>PhoenixOJ</title>
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-  <![endif]-->
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -15,6 +11,8 @@
 
 
 <body>
+
+
   <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
@@ -70,14 +68,19 @@
     </div>
   </div>
 
-<marquee class="hidden-phone" direction="left" behavior="alternate" scrollamount="2"
-style="position:absolute;width:100%;"><b>This is the project of the team xPhoenix.</b></marquee>
+<header id="overview" class="jumbotron subhead">
+  <%= yield :overview %>
+</header>
 
   <div class = "container">
 		<%= yield %>
 	</div>
 
-
+<footer class="footer">
+  <div class="container">
+    Fuck the world.
+  </div>
+</footer>
 
 
 </body>

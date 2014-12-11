@@ -14,10 +14,9 @@ task :submit_problem_to_codeforces => :environment do
   form.password = "woshilalala"
   form.click_button
   page = agent.get("http://codeforces.com/problemset/submit")
-
 # Submit Code
   form = agent.page.forms[1]
-  form.submittedProblemCode = submission.problem.pid
+  form.submittedProblemCode = "489A" #submission.problem.pid
   form.source = submission.code
   case submission.language
   when "GNU C++ 4.7" then form.programTypeId = "1"

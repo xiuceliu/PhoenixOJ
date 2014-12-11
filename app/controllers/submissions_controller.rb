@@ -24,14 +24,14 @@ class SubmissionsController < ApplicationController
     @submission.memoryConsumedBytes = 0
     @submission.save
     system "bundle exec rake submit_problem_to_codeforces SUB_ID=#{@submission.id} &"
-    redirect_to problem_submissions_path(@problem)
+    redirect_to status_path(:pid => @problem.id)
   end
 
   def destroy
     @problem = Problem.find(params[:problem_id])
     @submission = @problem.submissions.find(params[:id])
     @submission.destroy
-    redirect_to problem_submissions_path(@problem)
+    status_path(:pid => @problem.id)
   end
 
 end
