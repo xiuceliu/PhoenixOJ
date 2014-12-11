@@ -16,14 +16,9 @@ aFile = File.new("#{Rails.root}/db/codeforces_problemsetproblems.txt", "r")
 S = aFile.read
 
 hash = JSON.parse S
-count = 50
 hash["result"]["problems"].each do |problem|
-  Problem.create!(:title => problem["name"], :content => "Fuck", :ptype => "CF",
+  Problem.create!(:title => problem["name"], :ptype => "Codeforces",
   :pid => "#{problem["contestId"]}#{problem["index"]}")
-  count -= 1
-  if count <= 0 then
-  	break
-  end
 end
 
 aFile.close

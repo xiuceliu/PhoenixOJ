@@ -15,7 +15,7 @@
 
 
 <body>
-  <div class="navbar navbar-fixed-top">
+  <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -23,10 +23,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="#">Phoenix Online Judge</a>
+        <a class="brand" href="/">Phoenix Online Judge</a>
         <div class="nav-collapse">
           <ul class="nav">
-            <li><%= link_to "Home", '/' %></li>
             <li><%= link_to "Problem Set", problems_path %></li>
             <li><%= link_to "Status", status_path %></li>
             <li><%= link_to "FAQ", faq_path %></li>
@@ -113,7 +112,3 @@ style="position:absolute;width:100%;"><b>This is the project of the team xPhoeni
             <% end %>
 </div>
 </html>
-
-
-
-          

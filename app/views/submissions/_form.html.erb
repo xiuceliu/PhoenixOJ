@@ -38,8 +38,8 @@
         <td><%= link_to submission.problem_id, submission.problem %></td>
         <td><%= submission.language %></td>
         <td><%= submission.verdict %></td>
-        <td><%= "#{submission.timeConsumedMillis} KB"%></td>
-        <td><%= "#{submission.memoryConsumedBytes} MS" %></td>
+        <td><%= "#{submission.timeConsumedMillis} MS"%></td>
+        <td><%= "#{submission.memoryConsumedBytes} KB" %></td>
         
         <td>
           <% if submission.user == current_user %>

@@ -10,7 +10,7 @@ ARR_VERDICT = [
 	"Wrong Answer",
 	"Time Limit Exceeded",
 	"Memory Limit Exceeded",
-	"Complie Error",
+	"Compile Error",
 	"Runtime Error",
 	"Presentation Error"
 ]

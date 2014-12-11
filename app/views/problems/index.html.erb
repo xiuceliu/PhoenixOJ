@@ -33,12 +33,14 @@
       <% end %>
     </tbody>
   </table>
-  <div class="apple_pagination">
-    <div class="page_info">
+
+  <div class = "apple_pagination">
+    <div class = "page_info">
       <%= page_entries_info @problems %>
     </div>
     <%= will_paginate @problems, :container => false %>
   </div>
+
 <% else %>
   <h2>No results found!</h2>
 <% end %>
