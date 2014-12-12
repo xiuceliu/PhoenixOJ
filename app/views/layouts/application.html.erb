@@ -49,8 +49,9 @@
                 <b class = "caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+                  <li><%= link_to "Show User Profile", users_path(current_user) %></li>
                   <li><%= link_to "Edit User Profile", edit_user_registration_path %></li>
+                  <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
                 </ul>
               </li>
             </ul>

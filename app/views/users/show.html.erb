@@ -1,0 +1,40 @@
+<div class="row-fluid">
+<div class="span10">
+          <h2>Information of <%= @user.username %></h2>
+          <div id="userinfo">
+            <table class="table">
+              <tbody><tr><th class="span3">Username:</th><td class="span9"><%= @user.username %> </td></tr>
+              <tr><th>User ID:</th><td><%= @user.id %> </td></tr>
+              <tr><th>Email:</th><td><%= @user.email %></td></tr>
+              <tr><th>Register Time:</th><td><%= @user.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td></tr>
+              <tr><th>Last Login:</th><td><%= @user.last_sign_in_at.strftime("%Y-%m-%d %H:%M:%S") %></td></tr>
+              <tr>
+                <th>Problems Accepted:</th>
+                <td>
+                  <div class="in collapse">
+										<% @arr0.each do |id| %>
+											<% problem = Problem.find(id) %>
+											<%= link_to "Problem #{problem.id} - #{problem.pid} #{problem.title}", problem %>
+											</br>
+										<% end %>
+                  </div></br>
+                  <%= "Total: #{@user.arr_prosolved.length}" %>
+                </td>
+              </tr>
+              <tr>
+                <th>Problems Failed:</th>
+                <td>
+                  <div class="in collapse">
+										<% @arr1.each do |id| %>
+											<% problem = Problem.find(id) %>
+											<%= link_to "Problem #{problem.id} - #{problem.pid} #{problem.title}", problem %>
+											</br>
+										<% end %>
+                  </div></br>
+                  <%= "Total: #{@user.arr_profailed.length}" %>
+                </td>
+              </tr>
+            </tbody></table>
+          </div>
+        </div>
+      </div>

@@ -13,6 +13,12 @@ PheonixOJ::Application.routes.draw do
   root to: 'OnlineJudge#index'
   get '/faq', to: 'faq#index', as: 'faq'
   get '/forum', to: 'forum#index', as: 'forum'
+  get 'users/:id', to: 'users#show', as: 'users'
+
+
+  
+
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
