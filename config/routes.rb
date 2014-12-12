@@ -3,6 +3,8 @@ PheonixOJ::Application.routes.draw do
   devise_for :users
 
   get '/status', to: 'submissions#index', as: 'status'
+  
+  resources :discusses
 
   resources :problems do
     resources :discusses

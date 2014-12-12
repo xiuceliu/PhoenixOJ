@@ -12,6 +12,7 @@ end
 gem 'will_paginate', '~> 3.0.5'
 gem 'mechanize'
 gem 'nokogiri'
+gem 'ancestry'
 
 group :production do
 	gem 'pg'

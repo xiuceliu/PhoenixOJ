@@ -28,3 +28,9 @@
     <% end %>
   <% end %>
 </div>
+
+<%= nested_discusses @discuss.subtree.arrange(:order => :created_at) %>
+
+<p><%= link_to "Back to Messages", problem_discusses_path(@problem) %></p>
+
+

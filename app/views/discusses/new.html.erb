@@ -5,4 +5,10 @@
   	<%=t '.title', :default => [:'helpers.titles.new', 'Create %{model}'], :model => model_class.model_name.human.titleize %>
   </h1>
 </div>
+
+
+<%= render @discuss.parent if @discuss.parent %>
+
 <%= render :partial => 'form' %>
+
+<p><%= link_to "Back to Messages", problem_discusses_path(@problem) %></p>

@@ -3,6 +3,7 @@ class DiscussesController < ApplicationController
 	def index
 		@problem = Problem.find(params[:problem_id])
 		@discusses = @problem.discusses
+		@discuss = Discuss.new
 	end
 	def show
 		@problem = Problem.find(params[:problem_id])
@@ -14,8 +15,8 @@ class DiscussesController < ApplicationController
 	end
 	def new
 	  	@problem = Problem.find(params[:problem_id])
-	  	@discuss = Discuss.new
-  	end
+	  	@discuss = Discuss.new(:parent_id => params[:parent_id])
+  end
 	def create
 		@problem = Problem.find(params[:problem_id])
 		@discuss = Discuss.new(params[:discuss])

@@ -1,16 +1,12 @@
-<%- model_class = Discuss -%>
 <div class="page-header">
-  <h1>
-    Problem <%= @problem.id %> - 
-    <%=t '.title', :default => model_class.model_name.human.pluralize.titleize %>
-  </h1>
+  <h1>Problem <%= @problem.id %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:user) %></th>
-      <th><%= model_class.human_attribute_name(:content) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>User</th>
+      <th>Content</th>
+      <th>Created At</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -36,14 +32,14 @@
             <% end %>
           <% end %>
         </td>
+        <td>
+          <%= link_to "Reply", new_problem_discuss_path(@problem, :parent_id => discuss) %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_problem_discuss_path(@problem),
-            :class => 'btn btn-primary' %>
-<%= link_to t('.back', :default => t("helpers.links.back")),
-            problem_path(@problem),
-            :class => 'btn btn-primary' %>
+<%= nested_discusses @discusses.arrange(:order => :created_at) %>
+
+<%= render "form" %>

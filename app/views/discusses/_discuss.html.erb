@@ -1,14 +1,10 @@
-<p>
-  <strong>User:</strong>
-  <%= discuss.user %>
-</p>
- 
-<p>
-  <strong>Content:</strong>
-  <%= discuss.content %>
-</p>
-  <p>
-<%= link_to 'Delete this post', [discuss.problem, discuss],
-  :confirm => 'Are you sure?',
-  :method => :delete %>
-</p>
+<div class="message">
+  <div class="created_at"><%= discuss.created_at.strftime("%B %d, %Y") %></div>
+  <div class="content">
+    <%= link_to discuss.content, problem_discuss_path(@problem, discuss) %>
+  </div>
+  <div class="actions">
+    <%= link_to "Reply", new_problem_discuss_path(@problem, :parent_id => discuss) %> |
+    <%= link_to "Destroy", discuss, :confirm => "Are you sure?", :method => :delete %>
+  </div>
+</div>

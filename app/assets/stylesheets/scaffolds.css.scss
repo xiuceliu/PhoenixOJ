@@ -1,3 +1,11 @@
+.nested_discusses {
+  margin-left: 30px;
+}
+
+.nested_discusses .nested_discusses .nested_discusses .nested_discusses {
+  margin-left: 0;
+}
+
 .jumbotron:after {
     background: url("8.jpg") repeat scroll center center ;
     bottom: 0;
