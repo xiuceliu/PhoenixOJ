@@ -17,6 +17,7 @@
   <table class="table table-striped">
     <thead>
       <tr>
+        <th><%= model_class.human_attribute_name("Solved") %></th>
         <th><%= model_class.human_attribute_name("Problem ID") %></th>
         <th><%= model_class.human_attribute_name(:title) %></th>
         <th><%= model_class.human_attribute_name(:Source) %></th>
@@ -26,7 +27,14 @@
     <tbody>
       <% @problems.each do |problem| %>
         <tr>
-          <td><%= link_to "#{1000 + problem.id}" , problem %></td>
+          <td>
+            <% if current_user %>
+              <% if current_user.arr_prosolved.include?(problem.id) then %> √ <% end %>
+              <% if current_user.arr_profailed.include?(problem.id) then %> X <% end %>
+            <% end %>
+
+          </td>
+          <td><%= link_to problem.id , problem %></td>
           <td><%= link_to problem.title, problem %></td>
           <td><%= problem.ptype %></td>
           <td><%= link_to problem.pid, problem %></td>

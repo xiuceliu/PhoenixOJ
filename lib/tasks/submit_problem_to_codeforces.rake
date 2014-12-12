@@ -5,6 +5,11 @@ desc "Submit Problem to Codeforces"
 task :submit_problem_to_codeforces => :environment do
   
   submission = Submission.find(ENV["SUB_ID"])
+  puts "!!!!!!!!!!!!!!!!!!!!!!!!"
+  puts ENV["SUB_ID"]
+  puts ENV["USER_ID"]
+  puts "!!!!!!!!!!!!!!!!!!!!!!!!"
+  current_user = User.find(ENV["USER_ID"])
 
 # Login
   agent = Mechanize.new
@@ -16,7 +21,7 @@ task :submit_problem_to_codeforces => :environment do
   page = agent.get("http://codeforces.com/problemset/submit")
 # Submit Code
   form = agent.page.forms[1]
-  form.submittedProblemCode = "489A" #submission.problem.pid
+  form.submittedProblemCode = submission.problem.pid
   form.source = submission.code
   case submission.language
   when "GNU C++ 4.7" then form.programTypeId = "1"
@@ -46,4 +51,20 @@ task :submit_problem_to_codeforces => :environment do
       submission.timeConsumedMillis = hash["result"][0]["timeConsumedMillis"]
       submission.memoryConsumedBytes = hash["result"][0]["memoryConsumedBytes"]
       submission.save
+
+
+      id = submission.problem.id
+      if submission.verdict == ARR_VERDICT[1]
+        if current_user.arr_prosolved.include?(id) == false
+          current_user.arr_prosolved.push(id)
+        end
+        if current_user.arr_profailed.include?(id) == true
+          current_user.arr_prosolved.delete(id)
+        end
+      else
+        if current_user.arr_prosolved.include?(id) == false && current_user.arr_profailed.include?(id) == false
+          current_user.arr_profailed.push(id)
+        end
+      end
+      current_user.save
 end

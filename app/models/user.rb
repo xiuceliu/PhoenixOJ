@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,:timeoutable,
          :recoverable, :rememberable, :trackable, :validatable,
          :authentication_keys=>[:username]
+         
   has_many :discusses
   has_many :submissions
   # Setup accessible (or protected) attributes for your model
@@ -13,4 +14,9 @@ class User < ActiveRecord::Base
   end
   before_validation :add_value
   # attr_accessible :title, :body
+
+  serialize :arr_prosolved, Array
+  serialize :arr_profailed, Array
+
+
 end

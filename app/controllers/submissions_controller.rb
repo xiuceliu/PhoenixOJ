@@ -23,7 +23,7 @@ class SubmissionsController < ApplicationController
     @submission.timeConsumedMillis = 0
     @submission.memoryConsumedBytes = 0
     @submission.save
-    system "bundle exec rake submit_problem_to_codeforces SUB_ID=#{@submission.id} &"
+    system "bundle exec rake submit_problem_to_codeforces SUB_ID=#{@submission.id} USER_ID=#{current_user.id} &"
     redirect_to status_path(:pid => @problem.id)
   end
 
