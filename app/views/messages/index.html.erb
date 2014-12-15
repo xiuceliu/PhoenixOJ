@@ -1,154 +1,110 @@
 <% content_for :overview do %>
   <div class="container">
-    <h1>Messages,小伙伴搂着侃!</h1>  
+    <h1>Messages, 我是啦啦啦</h1>  
   </div>
 <% end %>
 
-<br />
-<div id="container">
-  <div id="header">
-    <h1 align="center" >The messages box of  <%= current_user.username %> </h1>
-  </div>
-  <div id="menu">
-    <h2>Menu:</h2>
-    <ul >
-    <form id="filterform" class="form-inline" method="">
-<%= form_tag  messages_path, :method => 'get' do %>
-  <p>
-    Receiver or Sender: <%= text_field_tag :receive_name, params[:receive_name], class: "input-small" %>
-    <%= submit_tag "Search", :name => nil, class: "btn btn-primary" %>
-  </p>
-<% end %>
-</form>
+<div class="page-header"></div>
 
+<div id="container" class="row-fluid"><div class="">
+    <h2> <%= current_user.username %>'s Message Box </h2>
 
-      <a href="javascript:turn_to(1,2,0)" >Unread Messages</a>
-      <a href="javascript:turn_to(0,2,1)">Inbox</a><br />
-      <a href="javascript:turn_to(0,1,2)">Outbox</a><br />
-      <br />
-      <a data-toggle="modal" href="#WriteWindow">Write</a>
+    <ul class="nav nav-tabs">
+    <li class="active"><a href="#inbox" data-toggle="tab">Inbox</a></li>
+    <li><a href="#outbox" data-toggle="tab">Outbox</a></li>
+    <li><a data-toggle="modal" href="#WriteWindow">Write</a></li>
     </ul>
-  </div>
-  <div id="content0">
-      <table border="1">
-         <tr>
-           <th>Sender:</th>
-           <th>Receiver:</th>
-           <th>Subject:</th>
-           <th>Send_Time:</th>
-           <th>State:</th>
-           <th>--W--</th>
-           <th>--D--</th>
-         </tr>
 
-        <% @messages_unread.each do |message| %>
-        <% if (message.receiver_ID ==current_user.id) && (message.receiver_delete) == false && (message.state == false) then %>
-         <tr><% @users = User.find_all_by_id(message.sender_ID) %>
-           <% @users.each do |user| %>
-           <% if user.id == message.sender_ID %>
-             <td><%= user.username %></td>
-             <% break %>
-            <% end %>
-           <% end %>
-             <td><%= current_user.username %>
-             </td>
-             <td><%= message.subject %>
-             </td>
-             <td><%= message.send_time %>
-             </td>
-                <td>Unread</td>
-             <td><%= link_to 'Watch', message %></td>
-             <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-         </tr>
-      <% end %>
+    <div class="tab-content">
+
+    <div class="tab-pane active" id="inbox">
+
+    <table class="table table-striped">
+    <thead>
+      <tr>
+          <th>Sender:</th><th>Receiver:</th>
+          <th>Subject:</th><th>State:</th>
+          <th>Send_Time:</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @messages_in.each do |message| %>
+      <tr>
+        <% user = User.find(message.sender_ID) %>
+        <td><%= link_to user.username, users_path(user) %></td>
+        <td><%= link_to current_user.username, users_path(current_user) %></td>
+        <% if message.state == false then %>
+          <td><b><%= link_to message.subject, message %>
+        </b></td>
+          <td><b>Unread</b></td>
+        <% else %>
+          <td><%= link_to message.subject, message %></td>
+          <td>Read</td>
+        <% end %>
+        <td><%= message.send_time.strftime("%Y-%m-%d %H:%M:%S") %></td>
+      </tr>
     <% end %>
+    </tbody>
     </table>
-    <div class = "apple_pagination" style="background-color:#CC6600;">
-    <div class = "page_info">
-      <%= page_entries_info @messages_unread %>
+    <div class = "apple_pagination">
+      <div class = "page_info">
+        <%= page_entries_info @messages_in %>
+      </div>
+        <%= will_paginate @messages_in, :container => false %>
     </div>
-    <%= will_paginate @messages_unread, :container => false %>
-  </div>
-  </div>
+    </div>
 
+    <div class="tab-pane" id="outbox">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+          <th>Sender:</th><th>Receiver:</th>
+          <th>Subject:</th><th>State:</th>
+          <th>Send_Time:</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @messages_out.each do |message| %>
+      <tr>
+        <% user = User.find(message.receiver_ID) %>
+        <td><%= link_to current_user.username, users_path(current_user) %></td>
+        <td><%= link_to user.username, users_path(user) %></td>
+        <td><%= link_to message.subject, message %></td>
 
-  <div id="content1">
-      <table border="1">
-         <tr>
-           <th>Sender:</th>
-           <th>Receiver:</th>
-           <th>Subject:</th>
-           <th>Send_Time:</th>
-           <th>State:</th>
-           <th>--W--</th>
-           <th>--D--</th>
-         </tr>
-
-        <% @messages_in.each do |message| %>
-         <tr>
-             <% @users = User.find_all_by_id(message.sender_ID) %>
-             <% @users.each do |user| %>
-             <td><%= user.username %></td>
-             <% end %>
-             <td><%= current_user.username %>
-             </td>
-             <td><%= message.subject %>
-             </td>
-             <td><%= message.send_time %>
-             </td>
-             <% if message.state == false then %>
-                <td>Unread</td>
-             <% else %>
-                 <td>Readed</td>
-              <% end %>
-             <td><%= link_to 'Watch', message %></td>
-             <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-         </tr>
+        <% if message.state == false then %>
+          <td>Unread</td>
+        <% else %>
+          <td>Read</td>
+        <% end %>
+        <td><%= message.send_time.strftime("%Y-%m-%d %H:%M:%S") %></td>
+      </tr>
     <% end %>
+    </tbody>
     </table>
-    <div class = "apple_pagination" style="background-color:#CC6600;">
-    <div class = "page_info">
-      <%= page_entries_info @messages_in %>
+    <div class = "apple_pagination">
+      <div class = "page_info">
+        <%= page_entries_info @messages_out %>
+      </div>
+      <%= will_paginate @messages_out, :container => false %>
     </div>
-    <%= will_paginate @messages_in, :container => false %>
-  </div>
-  </div>
-
-
-  <div id="content2">
-      <table border="1">
-         <tr>
-           <th>Sender:</th>
-           <th>Receiver:</th>
-           <th>Subject:</th>
-           <th>Send_Time:</th>
-           <th>--W--</th>
-           <th>--D--</th>
-         </tr>
-        <% @messages_out.each do |message| %>
-         <tr>
-             <td><%= current_user.username %></td>
-             <% @users  = User.find_all_by_id(message.receiver_ID) %>
-             <% @users.each do |user| %>
-             <td><%= user.username %></td>
-            <% end %>
-             <td><%= message.subject %>
-             </td>
-             <td><%= message.send_time %>
-             </td>
-             <td><%= link_to 'Watch', message %></td>
-             <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-         </tr>
-    <% end %>
-    </table>
-    <div class = "apple_pagination" style="background-color:#CC6600;">
-    <div class = "page_info">
-      <%= page_entries_info @messages_out %>
     </div>
-    <%= will_paginate @messages_out, :container => false %>
+    </div>
   </div>
-  </div>
+</dib>
 
+<script>
+$(document).ready(function() {
+  $("a").click(function() {
+    link_host = this.href.split("/")[2];
+    document_host = document.location.href.split("/")[2];
+
+    if (link_host != document_host) {
+      window.open(this.href);
+      return false;
+    }
+  });
+});
+</script>
 
 <% if user_signed_in? %>
 <div id="WriteWindow" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -156,21 +112,21 @@
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
               <h3 id="myModalLabel">Write</h3>
             </div>
-            <div id="modify_form" class="form-horizontal ajform">
+            
             <div class="modal-body">
               <% message = Message.new %>
               <%= form_for(:message, :url => messages_path) do |f| %>
                 <% if  message.errors.any? %>
-                    <div id="error_explanation">
-                            <h2><%= pluralize( message.errors.count, "error") %> prohibited this message from being saved:</h2>
-
+                  <div id="error_explanation">
+                    <h2><%= pluralize( message.errors.count, "error") %> prohibited this message from being saved:</h2>
                        <ul>
-                             <% message.errors.full_messages.each do |msg| %>
-                                      <li><%= msg %></li>
-                             <% end %>
-                         </ul>
-                     </div>
-               <% end %>
+                          <% message.errors.full_messages.each do |msg| %>
+                            <li><%= msg %></li>
+                          <% end %>
+                        </ul>
+                  </div>
+                <% end %>
+              
               <div class="control-group">
                     <% f.label :sender_ID %>
                   <div class="controls">
@@ -181,21 +137,21 @@
                 <div class="control-group">
                 <label class="control-label">Receiver: </label>
                 <div class="controls">
-                  <%= f.text_field :receive_name, class: "input-medium" %>
+                  <%= f.text_field :receive_name, class: "input-medium", placeholder: "Reciever" %>
                 </div>
                </div>
 
                 <div class="control-group">
-                <label class="control-label">Topic: </label>
+                <label class="control-label">Title: </label>
                 <div class="controls">
-                  <%= f.text_field :subject, class: "input-medium"%>
+                  <%= f.text_field :subject, class: "input-medium", placeholder: "Title" %>
                 </div>
                </div>
 
                 <div class="control-group">
                 <label class="control-label">Content: </label>
                 <div class="controls">
-                  <%= f.text_area :content, class: "input-medium", size: "60*40" %>
+                  <%= f.text_area :content, :class => 'text_area input-block-level', placeholder: "Content", :colspan => "2", :rows => "12" %>
                 </div>
               </div>
 
@@ -228,7 +184,7 @@
               </div>
 
             </div>
-            </div>
+
             <div class="modal-footer">
               <%= f.submit "Send", class: "btn btn-primary" %>
               <button class="btn" data-dismiss="modal">Close</button>

@@ -12,8 +12,8 @@
 
 <% content_for :overview do %>
 	<div class="container" style = "text-align: center">
-    <h1>Welcome to Phoenix Online Judge!</h1>
-    <p class = "lead">喝最烈的酒，操最爱的人</p>
+    <h1>Welcome to Phoenix Online Judge !</h1>
+    <p class = "lead">喝最烈的酒！</p>
   </div>
 <% end %>
 
@@ -28,14 +28,10 @@
 
 <div class="container-fluid">
   <div class="row-fluid">
-    <div class="span3">
-    </div>
-    <div class="span4">
+    <div class="span5">
       <h2 style="color: #4499ee">Recent News
         <span style="font-size:12px"><%= link_to "[more...]", news_index_path %></span>
-      </h2>
-
-      <hr>
+      </h2><hr>
       <% @news.each do |f| %>
         <h3 style="color: #4499ee"><%= f.title %></h3>
         <p style="word-wrap:break-word; word-break:break-all"><%= f.content[0 .. (f.content.length / 2)] %>...
@@ -45,7 +41,31 @@
         </br>
       <% end %>
     </div>
+    <div class="span2"></div>
+
     <div class="span5">
+      <h2 style="color: #4499ee">Top Coders</h2><hr>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>User</th>
+            <th>Problems Solved</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% i = 0 %>
+          <% @users.each do |user| %>
+            <% i += 1 %>
+            <tr>
+              <td><%= i %></td>
+              <td><%= link_to user.username, users_path(user) %></td>
+              <td><%= link_to user.arr_prosolved.length, status_path(:usn => user.username, :res => "Accepted") %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <div style="float:right"><%= link_to "View all >>", ranklist_path %></div>
     </div>
   </div>
 </div>

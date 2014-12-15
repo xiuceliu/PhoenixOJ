@@ -11,7 +11,9 @@
 .CodeRay pre {
   margin: 0px;
   padding: 5px;
+  border: 0px;
 }
+
 
 .CodeRay .an { color:#E7BE69 }                      /* html attribute */
 .CodeRay .c  { color:#BC9358; font-style: italic; } /* comment */

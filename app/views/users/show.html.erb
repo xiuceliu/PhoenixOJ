@@ -26,7 +26,7 @@
 											</br>
 										<% end %>
                   </div></br>
-                  <%= "Total: #{@user.arr_prosolved.length}" %>
+                  Total: <span class="label label-info"><%= "#{@user.arr_prosolved.length}" %></span>
                 </td>
               </tr>
               <tr>
@@ -39,7 +39,7 @@
 											</br>
 										<% end %>
                   </div></br>
-                  <%= "Total: #{@user.arr_profailed.length}" %>
+                  Total: <span class="label label-info"><%= "#{@user.arr_profailed.length}" %></span>
                 </td>
               </tr>
             </tbody></table>

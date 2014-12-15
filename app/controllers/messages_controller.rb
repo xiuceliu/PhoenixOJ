@@ -43,15 +43,12 @@ class MessagesController < ApplicationController
   end
 
   def show
-    @message =Message.find(params[:id])
-    @user_send = User.find_by_id(@message.sender_ID)
-    @user_receive = User.find_by_id(@message.receiver_ID)
+    @message = Message.find(params[:id])
+    @user_send = User.find(@message.sender_ID)
+    @user_receive = User.find(@message.receiver_ID)
     if current_user.id == @message.receiver_ID
         @message.state = true
         @message.save
-    end
-    respond_to do |format|
-      format.html #show.html.erb
     end
   end
 

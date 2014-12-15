@@ -1,5 +1,12 @@
-<div class="page-header">
-</div>
+<% content_for :overview do %>
+  <div class="container">
+    <h1>Discuss , 子曾经约过</h1> 
+  </div>
+<% end %>
+<div class="page-header"></div>
+
+<h2>Problem <%= @problem.id %> - <%= @problem.pid %> <%= @problem.title %></h2></br>
+
 <div class="row-fluid">
 	<div class="span6">
 		<%= nested_discusses @discusses.arrange(:order => :created_at) %>

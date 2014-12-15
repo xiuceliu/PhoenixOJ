@@ -25,20 +25,8 @@
             <li><%= link_to "Problem Set", problems_path %></li>
             <li><%= link_to "Status", status_path %></li>
             <li><%= link_to "Ranklist", ranklist_path %></li>
-            <li><%= link_to "FAQ", faq_path %></li>
-            <!-- <li><%= link_to "Forum", forum_path %></li> -->
+            <!-- <li><%= link_to "FAQ", faq_path %></li> -->
             <li><%= link_to "News", news_index_path %></li>
-            <li class="dropdown" id="more"><a class="dropdown-toggle" data-toggle="dropdown" href="teaminfo.php">More... <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="teaminfo.php">Our Team</a></li>
-                  <li><a href="http://www.oiegg.com/forumdisplay.php?fid=407" target="_blank">BBS</a></li>
-                  <li class="divider"></li>
-                  <li><a href="recent_contest.php">Recent Contests</a></li>
-                  <!--<li><a href="training_stat.php">Training Stats</a></li>-->
-                  <li class="divider"></li>
-                  <li class="disabled"><a>Coming Soon...</a></li>
-                </ul>
-              </li>				
           </ul>
           <% if user_signed_in? %>
             <ul id="logoutbar" class="nav pull-right">
@@ -50,8 +38,6 @@
                 <ul class="dropdown-menu">
                   <li><%= link_to "Show User Profile", users_path(current_user) %></li>
                   <li><%= link_to "Edit User Profile", edit_user_registration_path %></li>
-                  <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-                  
                   <!-- Mail -->
                   <% number = 0 %>
                   <% current_user.messages.each do |message| %>
@@ -59,7 +45,8 @@
                                 <% number += 1 %>
                         <% end %>
                   <% end %>
-                  <li><%= link_to "Message:#{number}", messages_path %></li>
+                  <li><%= link_to "Messages: #{number} unread", messages_path %></li>
+                  <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
 
                 </ul>
               </li>
@@ -88,7 +75,7 @@
 
 <footer class="footer">
   <div class="container">
-    Fuck the world.
+    <%= raw markdown("~~~ruby\nputs 'Developed by Ruby on Rails'") %>
   </div>
 </footer>
 

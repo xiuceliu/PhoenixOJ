@@ -1,23 +1,20 @@
-<p id="notice"><%= notice %></p>
-<p>
-	<b>Sender:</b><%= @user_send.username %>
-	&nbsp&nbsp&nbsp
-	<b>Receiver:</b><%= @user_receive.username %>
-	&nbsp&nbsp&nbsp
-	<b>Send_Time:</b><%= @message.send_time %>
-</p>
-<p>
-	<b>Subject:</b>
-	<%= @message.subject %>
-	<hr />
-</p>
-	
-<p>
-	<b>Content:</b>
-	<br />&nbsp&nbsp
-	<%= @message.content %>
-	<hr />
-</p>
-<br />
+<% content_for :overview do %>
+  <div class="container">
+    <h1>Messages, 我是啦啦啦</h1>  
+  </div>
+<% end %>
 
-<%= button_to 'Back', messages_path, :method=>:get %>
+<div class="page-header"></div>
+
+<div style="word-wrap:break-word; word-break:break-all">
+  <div class="modal-header" style="margin-left:10px">
+    <h3><div id="title"><%= @message.subject %></div></h3>
+  </div>
+    <div class="modal-body">
+        <div style="margin-left:10px">
+        Sent to <%= @user_receive.username %> by 
+        <%= @user_send.username %> at <%= @message.send_time.strftime("%Y-%m-%d %H:%M:%S") %>
+        </div></br>
+        <div class="well"><%= @message.content %></div>
+    </div>
+</div>
