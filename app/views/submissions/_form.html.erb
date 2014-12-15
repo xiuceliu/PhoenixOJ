@@ -39,10 +39,19 @@
       <tr>
         <td><%= submission.id %></td>
         <td><%= submission.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
-        <td><%= submission.user.username %></td>
+        <td><%= link_to submission.user.username, users_path(submission.user) %></td>
         <td><%= link_to submission.problem_id, submission.problem %></td>
         <td><%= submission.language %></td>
-        <td><%= submission.verdict %></td>
+        <td>
+          <% if submission.verdict == "Accepted" %>
+            <b><span style="color:#00cc00;"><%= submission.verdict %></span></b>
+          <% elsif submission.verdict == "Wrong Answer" || submission.verdict == "Time Limit Exceeded"%>
+            <span style="color:#ff0033"><%= submission.verdict %></span>
+          <% else %>
+            <span style="color:#04477c"><%= submission.verdict %></span>
+          <% end %>
+
+        </td>
         <td><%= "#{submission.timeConsumedMillis} MS"%></td>
         <td><%= "#{submission.memoryConsumedBytes} KB" %></td>
         

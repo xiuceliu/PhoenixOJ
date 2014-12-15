@@ -20,7 +20,7 @@
       <tr>
         <td><%= neww.id %></td>
         <td><%= link_to neww.title, "#", "class" => "show_edit_News", "data-toggle" => "modal", 
-        "data-title" => "#{neww.title}", "data-content" => "#{neww.content}", "href" => "#ShowNewsWindow" %></td>
+        "data-title" => "#{neww.title}", "data-content" => "#{raw markdown(neww.content)}", "href" => "#ShowNewsWindow" %></td>
         <td><%= neww.updated_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
         <td><%= link_to neww.user.username, users_path(neww.user) %></td>
         <% if current_user && current_user.admin == true %>

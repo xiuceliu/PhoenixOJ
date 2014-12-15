@@ -11,6 +11,9 @@
  *= require_self
  *= require_tree .
  */
+
+
+
 .block {
     border-bottom: 1px solid #e8e8e8;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -81,23 +84,12 @@ table tr {
   margin-left: 50px;
 }
 
-.jumbotron:after {
-    background: url("8.jpg") repeat scroll center center ;
-    bottom: 0;
-    content: "";
-    display: block;
-    left: 0;
-    opacity: 0.4;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
 .subhead {
     border-bottom: 1px solid #ddd;
     text-align: left;
 }
 .jumbotron {
-    background: linear-gradient(45deg, #020031 0%, #6d3353 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    background: linear-gradient(135deg, #049ff1 0%, #d1f0ef 100%) repeat scroll 0 0 rgba(0, 0, 0, 0.2);
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2) inset, 0 -3px 7px rgba(0, 0, 0, 0.2) inset;
     color: #fff;
     padding: 40px 0;
@@ -145,30 +137,10 @@ div.content-wrapper.well span.tex-span {
   text-align: center;
 }
 
-
-
-
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 14px;
-  line-height: 18px;
-}
-
 pre {
   background-color: #eee;
   padding: 10px;
   font-size: 11px;
-}
-
-a {
-  color: #000;
-  &:visited {
-    color: #666;
-  }
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
 }
 
 div {

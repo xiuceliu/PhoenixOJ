@@ -1,8 +1,21 @@
 body {
   background: url("6.jpg") #f2f2f2;
   color: #47433f;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: verdana,arial,sans-serif;
   font-size: 14px;
   line-height: 20px;
   padding-top: 40px;
+}
+
+
+a {
+	color: #4499ee
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: Helvetica,sans-serif;
+  font-weight: bold;
+  line-height: 20px;
+  margin: 15px 0;
+  text-rendering: optimizelegibility;
 }

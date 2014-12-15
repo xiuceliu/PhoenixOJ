@@ -29,10 +29,9 @@
         <tr>
           <td>
             <% if current_user %>
-              <% if current_user.arr_prosolved.include?(problem.id) then %> √ <% end %>
-              <% if current_user.arr_profailed.include?(problem.id) then %> X <% end %>
+              <% if current_user.arr_prosolved.include?(problem.id) then %><span style="color:#00cc00;margin-left:10px">YES</span><% end %>
+              <% if current_user.arr_profailed.include?(problem.id) then %><span style="color:#ff0033;margin-left:10px">NO</span><% end %>
             <% end %>
-
           </td>
           <td><%= link_to problem.id , problem %></td>
           <td><%= link_to problem.title, problem %></td>

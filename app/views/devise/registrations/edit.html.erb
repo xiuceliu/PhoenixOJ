@@ -1,4 +1,11 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<% content_for :overview do %>
+  <div class="container">
+    <h1>User Profile , 红红火火恍恍惚惚哈哈嘿嘿</h1> 
+  </div>
+<% end %>  
+<div class="page-header"></div>
+
+<h2>Edit <%= resource_name.to_s.humanize %></h2></br>
 
 <div class="form-horizontal">
         
@@ -7,7 +14,11 @@
 
 
   <div class="control-group"><label class="control-label">Username: </label>
-  <div class="controls"><%= f.text_field :username, autofocus: true %></div></div>
+  <div class="controls"><%= f.text_field :username, "style" => "background-color:#f5f5f5;
+  cursor: not-allowed" %></div></div>
+
+  <div class="control-group"><label class="control-label">Email: </label>
+  <div class="controls"><%= f.text_field :email, autocomplete: "off" %></div></div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>

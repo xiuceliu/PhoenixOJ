@@ -8,7 +8,7 @@ class OnlineJudgeController < ApplicationController
 		temp.each do |t|
 			@news.push(t)
 			i += 1
-			if i > 4 then
+			if i > 3 then
 				break
 			end
 		end

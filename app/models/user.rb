@@ -13,10 +13,10 @@ class User < ActiveRecord::Base
   has_many :submissions
   # Setup accessible (or protected) attributes for your model
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me
-  def add_value
-    self.email="#{username}@xxx.com"
-  end
-  before_validation :add_value
+  validates_presence_of :username
+  validates :email, uniqueness: true
+  validates :username, uniqueness: true
+
   # attr_accessible :title, :body
 
   serialize :arr_prosolved, Array
