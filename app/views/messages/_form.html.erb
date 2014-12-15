@@ -1,0 +1,51 @@
+<br />
+<br />
+<hr />
+<%= form_for(@message) do |f| %>
+  <% if @message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+      <% @message.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <% f.label :sender_ID %><br />
+    <%= f.hidden_field :sender_ID %>  
+  </div>
+ <div id="both">
+    <%= f.label :receive_name, "Receiver:" %>
+    <%= f.text_field :receive_name %>
+    <%= f.label :subject, "Topic:" %>
+    <%= f.text_field :subject %>
+</div>
+   <div  id="content">
+    <%= f.label :content, "Content:" %>
+    <%= f.text_area :content , size:"60*40" %>
+     </div>
+     <div class="actions">
+    <%= f.submit "Send" %>
+     <%= link_to 'Back', messages_path %>
+  </div>
+  <div class="field">
+    <% f.label :sender_delete %><br />
+    <%= f.hidden_field :sender_delete %>
+  </div>
+  <div class="field">
+    <% f.label :receiver_delete %><br />
+    <%= f.hidden_field :receiver_delete %>
+  </div>
+  <div class="field">
+    <% f.label :state %><br />
+    <%= f.hidden_field :state %>
+  </div>
+  <div class="field">
+    <% f.label :send_time %><br />
+    <%= f.hidden_field :send_time %>
+  </div>
+ 
+<% end %>

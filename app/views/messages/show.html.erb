@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+<p>
+	<b>Sender:</b><%= @user_send.username %>
+	&nbsp&nbsp&nbsp
+	<b>Receiver:</b><%= @user_receive.username %>
+	&nbsp&nbsp&nbsp
+	<b>Send_Time:</b><%= @message.send_time %>
+</p>
+<p>
+	<b>Subject:</b>
+	<%= @message.subject %>
+	<hr />
+</p>
+	
+<p>
+	<b>Content:</b>
+	<br />&nbsp&nbsp
+	<%= @message.content %>
+	<hr />
+</p>
+<br />
+
+<%= button_to 'Back', messages_path, :method=>:get %>

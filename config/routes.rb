@@ -5,7 +5,7 @@ PheonixOJ::Application.routes.draw do
   get '/status', to: 'submissions#index', as: 'status'
   
   resources :discusses
-
+  resources :messages
   resources :problems do
     resources :discusses
     resources :submissions
@@ -16,6 +16,7 @@ PheonixOJ::Application.routes.draw do
   get '/faq', to: 'faq#index', as: 'faq'
   get '/forum', to: 'forum#index', as: 'forum'
   get 'users/:id', to: 'users#show', as: 'users'
+  get '/ranklist', to: 'users#index', as: 'ranklist'
 
 
   

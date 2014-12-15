@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+function turn_to(i,j,k){
+	document.getElementById("content"+String(i)).style.display="none";
+	document.getElementById("content"+String(j)).style.display="none";
+	document.getElementById("content"+String(k)).style.display="block";
+}

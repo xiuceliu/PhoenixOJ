@@ -47,12 +47,8 @@
         <td><%= "#{submission.memoryConsumedBytes} KB" %></td>
         
         <td>
-          <% if submission.user == current_user %>
           <%= link_to t('.show', :default => t("helpers.links.Show Code")),
               problem_submission_path(submission.problem_id, submission), :class => 'btn btn-mini' %>
-          <% else %>
-            Show Code
-          <% end %>
           <!-- 
             <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       problem_submission_path(submission.problem_id, submission),

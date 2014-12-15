@@ -1,0 +1,38 @@
+<% content_for :overview do %>
+  <div class="container">
+    <h1>Ranklist , ...</h1>  
+  </div>
+<% end %>  
+
+<div class="page-header">
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Rank: </th>
+      <th>Username: </th>
+      <th>Problems Accepted: </th>
+      <th>Problems Attempted: </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% count = 1 %>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= count %></td>
+        <td><%= link_to user.username, users_path(user) %></td>
+        <td><%= link_to user.arr_prosolved.length, status_path(:usn => user.username, :res => "Accepted") %></td>
+        <td><%= link_to user.arr_prosolved.length + user.arr_profailed.length, status_path(:usn => user.username) %></td>
+        <% count += 1 %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+    <div class="apple_pagination">
+      <div class="page_info">
+        <%= page_entries_info @submissions %>
+      </div>
+      <%= will_paginate @submissions, :container => false %>
+    </div>

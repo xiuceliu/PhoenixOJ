@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141212102708) do
+ActiveRecord::Schema.define(:version => 20141215025137) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0, :null => false
@@ -40,6 +40,27 @@ ActiveRecord::Schema.define(:version => 20141212102708) do
   end
 
   add_index "discusses", ["ancestry"], :name => "index_discusses_on_ancestry"
+
+  create_table "duties", :force => true do |t|
+    t.integer  "message_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "messages", :force => true do |t|
+    t.integer  "sender_ID"
+    t.integer  "receiver_ID"
+    t.string   "receive_name"
+    t.boolean  "state"
+    t.boolean  "sender_delete"
+    t.boolean  "receiver_delete"
+    t.string   "subject"
+    t.text     "content"
+    t.datetime "send_time"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "problems", :force => true do |t|
     t.string   "title"
