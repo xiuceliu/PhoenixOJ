@@ -1,0 +1,20 @@
+<%= form_for @news, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="controls-group">
+    <label class="control-label">Title: </label>
+    <div class="controls">
+      <%= f.text_field :title, autofocus: true, class: "input-medium ", placeholder: "Title" %>
+    </div>
+  </div> </br>
+
+  <div class="control-group">
+    <label class="control-label">Content: </label>
+    <div class="controls">
+      <%= f.text_area :content, :class => 'text_area input-block-level', :colspan => "2", :rows => "12", placeholder: "Post a new message or reply!" %>
+    </div>
+  </div>
+  <div class="controls">
+    <%= f.submit "Post", :class => 'btn btn-primary' %>
+    <%= link_to t('.back', :default => t("helpers.links.back")),
+        news_index_path, :class => 'btn'  %>
+  </div>
+<% end %>

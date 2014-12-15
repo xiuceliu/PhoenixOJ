@@ -19,9 +19,11 @@
     <% @news.each do |neww| %>
       <tr>
         <td><%= neww.id %></td>
-        <td><%= link_to neww.title, news_path(neww) %></td>
+        <td><%= link_to neww.title, news_path(neww), "class" => "show_edit_News", "data-toggle" => "modal", 
+        "data-title" => "#{neww.title}", "data-content" => "#{neww.content}", "href" => "#addBookDialog" %></td>
         <td><%= neww.updated_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
         <td><%= link_to neww.user.username, users_path(neww.user) %></td>
+        <td><%= link_to "EDIT", edit_news_path(neww) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,23 +31,16 @@
 
 <div class="functions tcenter" style="margin-bottom:20px">
   <div class="btn-group">
-  	<a class="btn btn-primary" a data-toggle="modal" href="#CreatenewsWindow"> Create </a>
+    <a class="btn btn-primary" a data-toggle="modal" href="#CreatenewsWindow"> Create </a>
   </div>
 </div>
 
 <div class="pagination">
-	<div class="page_info">
-		<%= page_entries_info @news %>
-	</div>
-	<%= will_paginate @news, :container => false %>
+  <div class="page_info">
+    <%= page_entries_info @news %>
+  </div>
+  <%= will_paginate @news, :container => false %>
 </div>
-
-
-
-
-
-
-
 
 
 <div class="modal hide fade" id="CreatenewsWindow" aria-hidden="false">
@@ -56,8 +51,8 @@
   <div class="modal-body"><table width="100%">
     <%= form_for @newnews, :html => { :class => 'form-horizontal' } do |f| %>
     <div class = "control-group">
-    	Title:
-    	<div class="controls">
+      Title:
+      <div class="controls">
         <%= f.text_area :title, :class => 'text_area input-block-level', :colspan => "2", :rows => "12" %>
       </div>
     </div>
@@ -75,3 +70,25 @@
   <% end %>
   </table></div>
 </div>
+
+
+<div class="modal hide" id="addBookDialog">
+ <div class="modal-header">
+    <button class="close" data-dismiss="modal">×</button>
+    <h3>Modal header</h3>
+  </div>
+    <div class="modal-body">
+        
+        <input type="text" name="title" id="title" value=""/>
+        <input type="text" name="content" id="content" value=""/>
+    </div>
+</div>
+
+<script>
+$(document).on("click", ".show_edit_News", function () {
+     var title = $(this).data('title');
+     var content = $(this).data('content');
+     $(".modal-body #title").val(title);
+     $(".modal-body #content").val(content);
+});
+</script>
