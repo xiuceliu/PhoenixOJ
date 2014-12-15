@@ -16,3 +16,34 @@
     <p class = "lead">喝最烈的酒，操最爱的人</p>
   </div>
 <% end %>
+
+<div class="block" id="poster">
+  <div class="block-content">
+    <div class="poster i0" id="poster_2014">
+      <div class="content">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3">
+    </div>
+    <div class="span4">
+      <h2>Recent News
+        <span style="font-size:12px"><%= link_to "[more...]", news_index_path %></span>
+      </h2>
+
+      <hr>
+      <% @news.each do |f| %>
+        <h3><%= f.title %></h3>
+        <p style="word-wrap:break-word; word-break:break-all"><%= f.content[0 .. (f.content.length / 2)] %>
+          <%= link_to "[more...]", "#", "class" => "show_edit_News", "data-toggle" => "modal", 
+        "data-title" => "#{f.title}", "data-content" => "#{f.content}", "href" => "#ShowNewsWindow"%></p>
+      <% end %>
+    </div>
+    <div class="span5">
+    </div>
+  </div>
+</div>

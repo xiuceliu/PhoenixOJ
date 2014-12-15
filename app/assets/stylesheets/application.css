@@ -11,3 +11,201 @@
  *= require_self
  *= require_tree .
  */
+.block {
+    border-bottom: 1px solid #e8e8e8;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+#poster .poster.i0 {
+    display: block;
+}
+#poster .poster {
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+#poster_2014 {
+    background: url("1.jpg") no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+#poster .block-content {
+    height: 351px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+table tr {
+  font-size: 17px;
+}
+
+
+
+
+.block-content {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #fff;
+    border-color: #e8e8e8 #e8e8e8 #ccc;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.message {
+  border: solid 1px #999;
+  border-radius: 12px;
+  margin: 8px 0;
+  padding: 8px 15px;
+}
+
+.message .content a {
+  color: #2554f7;
+  text-decoration: none;
+}
+
+.message .created_at {
+  color: #555;
+  font-size: 12px;
+  float: right;
+}
+
+.nested_discusses {
+  margin-left: 50px;
+}
+
+.jumbotron:after {
+    background: url("8.jpg") repeat scroll center center ;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    opacity: 0.4;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.subhead {
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+.jumbotron {
+    background: linear-gradient(45deg, #020031 0%, #6d3353 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2) inset, 0 -3px 7px rgba(0, 0, 0, 0.2) inset;
+    color: #fff;
+    padding: 40px 0;
+    position: relative;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+    display: block;
+}
+
+.navbar-fixed-top {
+    background-color: #fff;
+    opacity: 0.85;
+}
+
+.footer {
+  background-color: #f5f5f5;
+  border-top: 1px solid #e5e5e5;
+  margin-top: 70px;
+  padding: 30px 0;
+  text-align: center;
+}
+
+
+div.content-wrapper.well span.tex-span {
+  display: inline;
+  float: none;
+  margin: auto;
+  width: auto;
+  box-sizing: border-box;
+  min-height: 30px;
+}
+
+.well {
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+  margin-bottom: 20px;
+  min-height: 20px;
+  padding: 19px;
+}
+
+.tcenter {
+  text-align: center;
+}
+
+
+
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  color: #000;
+  &:visited {
+    color: #666;
+  }
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}

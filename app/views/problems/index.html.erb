@@ -53,10 +53,3 @@
 <% else %>
   <h2>No results found!</h2>
 <% end %>
-<% if current_user %>
-  <% if current_user.admin? %>
-    <%= link_to t('.new', :default => t("helpers.links.Add a problem")),
-            new_problem_path,
-            :class => 'btn btn-primary' %>
-  <% end %>
-<% end %>

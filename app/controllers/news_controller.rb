@@ -1,3 +1,5 @@
+require 'will_paginate/array'
+
 class NewsController < ApplicationController
 	before_filter :authenticate_user!, :except => [:index, :show]
 	def index
@@ -24,9 +26,8 @@ class NewsController < ApplicationController
     redirect_to news_index_path
   end
 	def destroy
-    	@problem = Problem.find(params[:problem_id])
-    	@discuss = @problem.discusses.find(params[:id])
-    	@discuss.destroy
-    	redirect_to problem_discusses_path(@problem)
-  	end
+    @news = News.find(params[:id])
+    @news.destroy
+    redirect_to news_index_path
+  end
 end

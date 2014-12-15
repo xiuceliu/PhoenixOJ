@@ -11,8 +11,6 @@
 
 
 <body>
-
-
   <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
@@ -28,11 +26,10 @@
             <li><%= link_to "Status", status_path %></li>
             <li><%= link_to "Ranklist", ranklist_path %></li>
             <li><%= link_to "FAQ", faq_path %></li>
-            <li><%= link_to "Forum", forum_path %></li>
+            <!-- <li><%= link_to "Forum", forum_path %></li> -->
             <li><%= link_to "News", news_index_path %></li>
             <li class="dropdown" id="more"><a class="dropdown-toggle" data-toggle="dropdown" href="teaminfo.php">More... <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="news.php">News</a></li>
                   <li><a href="teaminfo.php">Our Team</a></li>
                   <li><a href="http://www.oiegg.com/forumdisplay.php?fid=407" target="_blank">BBS</a></li>
                   <li class="divider"></li>
@@ -95,9 +92,7 @@
   </div>
 </footer>
 
-
 </body>
-
 
 <div id="SignInWindow" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-header">
@@ -127,4 +122,25 @@
             </div>
             <% end %>
 </div>
+
+
+<div class="modal hide fade" id="ShowNewsWindow" aria-hidden="false">
+  <div class="modal-header">
+    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+    <h3><div id="title"></div></h3>
+  </div>
+    <div class="modal-body">
+        <div id="content"></div>
+    </div>
+</div>
+
+<script>
+$(document).on("click", ".show_edit_News", function () {
+     var title = $(this).data('title');
+     var content = $(this).data('content');
+     $(".modal-header #title").html(title);
+     $(".modal-body #content").html(content);
+});
+</script>
+
 </html>
