@@ -15,6 +15,8 @@ PheonixOJ::Application.routes.draw do
   root to: 'OnlineJudge#index'
   get '/faq', to: 'faq#index', as: 'faq'
   get '/forum', to: 'forum#index', as: 'forum'
+  resources :news
+  # get '/news', to: 'news#index', as: 'news'
   get 'users/:id', to: 'users#show', as: 'users'
   get '/ranklist', to: 'users#index', as: 'ranklist'
 

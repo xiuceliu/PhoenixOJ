@@ -1,0 +1,77 @@
+<% content_for :overview do %>
+  <div class="container">
+    <h1>News , ... unfinished</h1>  
+  </div>
+<% end %>
+
+<div class="page-header"></div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>News ID: </th>
+      <th>Title: </th>
+      <th>Last Edit Time: </th>
+      <th>Author: </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @news.each do |neww| %>
+      <tr>
+        <td><%= neww.id %></td>
+        <td><%= link_to neww.title, news_path(neww) %></td>
+        <td><%= neww.updated_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+        <td><%= link_to neww.user.username, users_path(neww.user) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="functions tcenter" style="margin-bottom:20px">
+  <div class="btn-group">
+  	<a class="btn btn-primary" a data-toggle="modal" href="#CreatenewsWindow"> Create </a>
+  </div>
+</div>
+
+<div class="pagination">
+	<div class="page_info">
+		<%= page_entries_info @news %>
+	</div>
+	<%= will_paginate @news, :container => false %>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="modal hide fade" id="CreatenewsWindow" aria-hidden="false">
+  <div class="modal-header">
+    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+    <h4> Post a news </h4>
+  </div>
+  <div class="modal-body"><table width="100%">
+    <%= form_for @newnews, :html => { :class => 'form-horizontal' } do |f| %>
+    <div class = "control-group">
+    	Title:
+    	<div class="controls">
+        <%= f.text_area :title, :class => 'text_area input-block-level', :colspan => "2", :rows => "12" %>
+      </div>
+    </div>
+    <div class="control-group">
+      Content:
+      <div class="controls">
+        <%= f.text_area :content, :class => 'text_area input-block-level', :colspan => "2", :rows => "12" %>
+      </div>
+    </div>
+    <div class="modal-footer">
+    <div class="controls">
+      <%= f.submit "Submit", :class => 'btn btn-primary' %>
+    </div></div>
+
+  <% end %>
+  </table></div>
+</div>

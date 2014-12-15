@@ -1,3 +1,5 @@
+require 'will_paginate/array'
+
 class UsersController < ApplicationController
 	def index
 		 @users = User.all.sort_by {|u| u.arr_prosolved.length}
