@@ -10,7 +10,7 @@
 
 <dl class="dl-horizontal">
   <div>
-    <%= @submission.code %>
+    <%= markdown("```cplusplus\n#{@submission.code}") %>
   </div>
 </dl>
 

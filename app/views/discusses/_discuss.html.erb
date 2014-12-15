@@ -1,10 +1,5 @@
 <div class="message">
-  <div class="created_at"><%= discuss.created_at.strftime("%B %d, %Y") %></div>
-  <div class="content">
-    <%= link_to discuss.content, problem_discuss_path(@problem, discuss) %>
-  </div>
-  <div class="actions">
-    <%= link_to "Reply", new_problem_discuss_path(@problem, :parent_id => discuss) %> |
-    <%= link_to "Destroy", discuss, :confirm => "Are you sure?", :method => :delete %>
-  </div>
+  <b><%= link_to discuss.title, problem_discuss_path(@problem, discuss, :parent_id => discuss) %></b>
+  By <%= link_to "#{discuss.user.username}", users_path(discuss.user) %> at
+  <%= discuss.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
 </div>

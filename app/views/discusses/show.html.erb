@@ -1,36 +1,18 @@
-<%- model_class = Discuss -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
-
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:problem_id) %>:</strong></dt>
-  <dd><%= @discuss.problem_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:content) %>:</strong></dt>
-  <dd><%= @discuss.content %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:user) %>:</strong></dt>
-  <dd><%= @discuss.user %></dd>
-</dl>
-
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              problem_discusses_path(@problem), :class => 'btn'  %>
-  <!-- Hiding the eidt button.
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_problem_discuss_path(@problem, @discuss), :class => 'btn' %>-->
-  <% if current_user %>
-    <% if current_user.admin? %>
-      <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              problem_discuss_path(@problem, @discuss),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
-    <% end %>
-  <% end %>
+<div class="row-fluid">
+	<div class="span6">
+		<%= nested_discusses @discuss.subtree.arrange(:order => :created_at) %>
+		<div class="page-header tcenter">
+	  	<h2><%= @discuss.title %></h2>
+  		<%= "Posted by "%> 
+	  	<%= link_to "#{@discuss.user.username}", users_path(@discuss.user) %>
+  		<%= "at #{@discuss.created_at.strftime("%Y-%m-%d %H:%M:%S")} on " %>
+  		<%= link_to "Problem #{@problem.id}", @problem %>
+		</div>
+		<%= raw markdown(@discuss.content) %>
+	</div>
+  <div class="span6">
+		<%= render :partial => 'form' %>
+	</div>
 </div>
-
-<%= nested_discusses @discuss.subtree.arrange(:order => :created_at) %>
-
-<p><%= link_to "Back to Messages", problem_discusses_path(@problem) %></p>
-
-

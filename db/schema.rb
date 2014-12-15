@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141212082132) do
+ActiveRecord::Schema.define(:version => 20141212102708) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0, :null => false
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20141212082132) do
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
     t.string   "ancestry"
+    t.string   "title"
   end
 
   add_index "discusses", ["ancestry"], :name => "index_discusses_on_ancestry"

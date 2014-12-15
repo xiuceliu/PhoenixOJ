@@ -1,16 +1,21 @@
-<%= form_for [@problem, @discuss], :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for [@problem, @newdiscuss], :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.hidden_field :parent_id %>
-  <div class="control-group">
-    <%= f.label :content, :class => 'control-label' %>
+  <div class="controls-group">
+    <label class="control-label">Title: </label>
     <div class="controls">
-      <%= f.text_area :content, :class => 'text_area' %>
+      <%= f.text_field :title, autofocus: true, class: "input-medium ", placeholder: "Title" %>
+    </div>
+  </div> </br>
+
+  <div class="control-group">
+    <label class="control-label">Content: </label>
+    <div class="controls">
+      <%= f.text_area :content, :class => 'text_area input-block-level', :colspan => "2", :rows => "12", placeholder: "Post a new message or reply!" %>
     </div>
   </div>
-  <% @discuss.user_id = 1 %>
-
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                problem_discusses_path(@problem), :class => 'btn' %>
+  <div class="controls">
+    <%= f.submit "Post", :class => 'btn btn-primary' %>
+    <%= link_to t('.back', :default => t("helpers.links.back")),
+        problem_discusses_path(@problem), :class => 'btn'  %>
   </div>
 <% end %>

@@ -13,6 +13,10 @@ gem 'will_paginate', '~> 3.0.5'
 gem 'mechanize'
 gem 'nokogiri'
 gem 'ancestry'
+gem "coderay"
+gem "RedCloth"
+gem 'redcarpet', '~> 3.2.2'
+gem 'albino'
 
 group :production do
 	gem 'pg'
