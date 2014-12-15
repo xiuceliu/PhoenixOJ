@@ -29,3 +29,8 @@ ARR_CF_LANGUAGE = [
 	"Python 2.7",
 	"Ruby 2"
 ]
+
+ARR_HDU_LANGUAGE = [
+	"GNU C++ 4.7",
+	"Java 7",
+]

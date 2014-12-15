@@ -10,7 +10,7 @@
   <div class="span6">Time Limit: <%= @tml %>  MS</div>
   <div class="span6">Memory Limit: <%= @mml %> MB</div>
   64-bit integer IO format:
-  <span class="badge badge-inverse">%lld</span>&nbsp;&nbsp;&nbsp;&nbsp;Java class name: <span class="badge badge-inverse">Main</span>
+  <span class="badge badge-inverse">%I64d</span>&nbsp;&nbsp;&nbsp;&nbsp;Java class name: <span class="badge badge-inverse">Main</span>
 </div>
 
   <h3> Description </h3>
@@ -64,10 +64,15 @@
     <%= form_for [@problem, @submission], :html => { :class => 'form-horizontal' } do |f| %>
     <div class = "control-group">
       <%= f.label :language, :class => 'control-label' %>
-      <%= f.select :language, options_for_select(ARR_CF_LANGUAGE), class: "input-medium" %>
+      <% if @problem.ptype == "Codeforces" then %>
+        <%= f.select :language, options_for_select(ARR_CF_LANGUAGE), class: "input-medium" %>
+      <% elsif @problem.ptype == "Hdu" then %>
+        <%= f.select :language, options_for_select(ARR_HDU_LANGUAGE), class: "input-medium" %>
+      <% end %>
+
     </div>
     <div class="control-group">
-      <%= f.label :code, :class => 'control-label' %>
+      <div class="control-label">Code: (No less than 50B)</div>
       <div class="controls">
         <%= f.text_area :code, :class => 'text_area input-block-level', :colspan => "2", :rows => "12" %>
       </div>

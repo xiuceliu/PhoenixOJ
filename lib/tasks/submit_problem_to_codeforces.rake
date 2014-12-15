@@ -5,10 +5,6 @@ desc "Submit Problem to Codeforces"
 task :submit_problem_to_codeforces => :environment do
   
   submission = Submission.find(ENV["SUB_ID"])
-  puts "!!!!!!!!!!!!!!!!!!!!!!!!"
-  puts ENV["SUB_ID"]
-  puts ENV["USER_ID"]
-  puts "!!!!!!!!!!!!!!!!!!!!!!!!"
   current_user = User.find(ENV["USER_ID"])
 
 # Login
@@ -59,7 +55,7 @@ task :submit_problem_to_codeforces => :environment do
           current_user.arr_prosolved.push(id)
         end
         if current_user.arr_profailed.include?(id) == true
-          current_user.arr_prosolved.delete(id)
+          current_user.arr_profailed.delete(id)
         end
       else
         if current_user.arr_prosolved.include?(id) == false && current_user.arr_profailed.include?(id) == false

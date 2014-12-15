@@ -3,6 +3,7 @@ class SubmissionsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index , :showall, :show]
 
   require 'will_paginate/array'
+  require 'open-uri'
 
   def index
     @submissions = Submission.search(params[:pid], params[:usn], params[:res], params[:lan]).paginate :page => params[:page], :per_page => 25
@@ -23,7 +24,11 @@ class SubmissionsController < ApplicationController
     @submission.timeConsumedMillis = 0
     @submission.memoryConsumedBytes = 0
     @submission.save
-    system "bundle exec rake submit_problem_to_codeforces SUB_ID=#{@submission.id} USER_ID=#{current_user.id} &"
+    if @problem.ptype == "Codeforces" then
+      system "bundle exec rake submit_problem_to_codeforces SUB_ID=#{@submission.id} USER_ID=#{current_user.id} &"
+    elsif @problem.ptype == "Hdu" then
+      system "bundle exec rake submit_problem_to_hdu SUB_ID=#{@submission.id} USER_ID=#{current_user.id} &"
+    end
     redirect_to status_path(:pid => @problem.id)
   end
 

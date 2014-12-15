@@ -1,6 +1,9 @@
 class Submission < ActiveRecord::Base
 	default_scope order('created_at DESC')
   attr_accessible :language, :code, :verdict, :timeConsumedMillis, :memoryConsumedBytes
+  validates :language, presence: true
+  validates :code, presence: true
+  validates :code, length: {minimum: 50}
   belongs_to :problem
  	belongs_to :user
 
