@@ -1,0 +1,111 @@
+<html>
+<head>
+<meta name="keywords" content="HDOJ ACM ICPC OJ C C++ Pascal Java">
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<link rel="stylesheet" type="text/css" href="/images/global.css" media="all">
+<link rel="stylesheet" type="text/css" href="/css/diyinhead.css" media="all">
+<link rel="stylesheet" type="text/css" href="/css/webinhead.css" media="all">
+<script src="/js/global.js" type="text/javascript"></script><script src="/js/register.js" type="text/javascript"></script><script src="/js/MathJax/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script><title>Problem - 1583</title>
+</head>
+<body>
+<a name="top"></a>
+<table align="center" cellspacing="0" cellpadding="0" width="980" border="0" style="word-wrap:break-word">
+<tr>
+	<td style="border:#1A5CC8 1px solid" align="center" width="100%">
+		<a href="/">
+			<img src="/images/banner.jpg" width="100%" height="116" border="0">
+		</a>
+	</td>
+</tr>
+<tr>
+	<td style="border:#1A5CC8 1px solid">
+	<table cellspacing="0" cellpadding="1" width="979px">
+	<tr bgcolor="#1A5CC8" align="center" class="banner" height="25">
+		<td>Online Judge</td>
+		<td>Online Exercise</td>
+		<td>Online Teaching</td>
+		<td>Online Contests</td>
+	<td>Exercise Author</td>
+	</tr>
+	<tr style="font-size:16px" align="center">
+		<td width="20%" valign="top">
+		<a href="/faq.php" style="text-decoration: none">F.A.Q</a><br>
+		<a href="/friends" style="text-decoration: none">Hand In Hand</a><br>
+		<a href="/onlineuser.php" style="text-decoration: none">Online Acmers</a>	<br>
+		<!-- /onlineuser.php-->
+		
+		<a href="/forum" style="text-decoration: none">Forum | </a><a href="/discuss/public/list.php" style="text-decoration: none">Discuss</a><br>
+		<a href="/statistic/submit_graph.php" style="text-decoration: none">Statistical Charts</a><br>
+		</td>
+		<td width="20%" valign="top">
+		<form action="/search.php" method="get">
+		<a href="/listproblem.php?vol=1" style="text-decoration: none">Problem Archive</a><br>
+		<!--<a href="http://feeds.feedburner.com/Hdoj-problemset"><img src="/images/rss1.jpg" alt="problemset" style="vertical-align:text-bottom;"width=20 height=20></a><br>-->
+		<!--
+			 <a href="/submit.php">Submit Solution</a><br>
+		-->	
+		<a href="/status.php" style="text-decoration: none">Realtime Judge Status</a><br>
+
+		<a href="/ranklist.php" style="text-decoration: none">Authors Ranklist</a><br>
+		<input name="field" value="author" type="hidden"><input class="text60" name="key">&#160;<input class="button40" type="submit" value="Search">
+		
+		<!--
+			<input name=field value=problem type=hidden><input class=text60 name=key>&nbsp;<input class=button40 type=submit value=Search>
+		-->
+		</form>
+		</td>
+		<td width="20%" valign="top">
+		 <form action="/search.php" method="get"> 
+		&#160;&#160;&#160;&#160;&#160;<a style="text-decoration: none" href="http://code.hdu.edu.cn/">C/C++/Java Exams &#160;&#160;&#160;&#160;</a><br>
+		<a style="text-decoration: none" href="/game">ACM Steps</a><br>
+		<a href="/ITJobs/">Go to Job</a><br>	
+		<a href="/livecast" style="text-decoration: none">Contest LiveCast</a><br>
+		<a style="text-decoration: none" href="/region">ICPC@China</a><br>
+		<!-- <a href="/register.php">Register New Author</a><br> -->
+		<!-- <a href="/modifyuser.php">Update Your Information</a><br> -->
+		</form>
+		</td>
+		<td width="20%" valign="top">
+		<a href="http://bestcoder.hdu.edu.cn" style="text-decoration: none; color: red; font-weight: bold;">Best Coder <sup style="color: gray;">beta</sup></a><br><a href="/vip/contest_list.php" style="text-decoration: none">VIP</a> | <a href="/contests/contest_list.php" style="text-decoration: none">STD Contests</a><br><a href="http://code.hdu.edu.cn/vcontest" style="text-decoration: none">Virtual Contests </a><br>&#160;&#160;<a href="/diy/contest_list.php" style="text-decoration: none">&#160;&#160;DIY | </a><a href="/webcontest" style="text-decoration: none"><font color="">Web-DIY</font> <font size="1" color="gray"><sup>beta</sup></font></a><br><a style="text-decoration: none" href="/recentcontest">Recent Contests</a><br>		</td>
+		<td width="20%">
+					<form method="post" action="/userloginex.php?action=login">
+			  <table width="168" border="0" align="center" cellspacing="0">
+			  	<tr><td align="center" colspan="2"><a href="/qqlogin/oauth/login.php"><img src="/qqlogin/images/qqlogin.png" border="0"></a></td></tr>
+				<tr>
+<td width="68">Author ID&#160;</td>
+<td align="right"><input name="username" type="text" class="text90" maxlength="20"></td>
+</tr>
+				<tr>
+<td>Password&#160;</td>
+<td align="right"><input name="userpass" type="password" class="text90" maxlength="20"></td>
+</tr>
+			  </table>
+			  <input name="login" type="submit" class="button40" value="Sign In">&#160;<a href="/register.php" style="text-decoration: none">Register new ID</a>
+			</form>
+						</td>
+	</tr>
+	</table>
+	</td>
+</tr>
+<tr>
+	<td>
+		<div align="center" id="rollword"><marquee scrollamount="2" width="600" scrolldelay="30" onmouseover="javascript:this.stop();" onmouseout="javascript:this.start();"><b style="margin-right:20px"><a style="color:red" href="http://acm.hdu.edu.cn/discuss/public/post/reply.php?postid=20680&amp;messageid=1&amp;deep=0">New~ 关于举办杭电程序设计竞赛（2014'12）的报名通知
+</a>
+
+
+<a style="color:blue" href="http://bestcoder.hdu.edu.cn/contests/contest_list.php">【比赛提醒】BestCoder 你报名了吗？（点击报名）</a>
+
+<a href="http://bestcoder.hdu.edu.cn/handbook/handbook-v2.0.htm" style="color:blue">【科普】什么是BestCoder？如何参加？</a><br>
+</b></marquee></div>	</td>
+</tr>
+<tr><td align="center">
+<h1 style="color:#1A5CC8">DNA Assembly</h1>
+<font><b><span style="font-family:Arial;font-size:12px;font-weight:bold;color:green">Time Limit: 1000/1000 MS (Java/Others)&#160;&#160;&#160;&#160;Memory Limit: 32768/32768 K (Java/Others)<br>Total Submission(s): 183&#160;&#160;&#160;&#160;Accepted Submission(s): 71<br></span></b></font><br><br><div class="panel_title" align="left">Problem Description</div> <div class="panel_content">Farmer John has performed DNA sequencing on his prize milk-producing cow, Bessie DNA sequences are ordered lists (strings) containing the letters 'A', 'C', 'G', and 'T'. <br><br>As is usual for DNA sequencing, the results are a set of strings that are sequenced fragments of DNA, not entire DNA strings. A pair of strings like 'GATTA' and 'TACA' most probably represent the string 'GATTACA' as the overlapping characters are merged, since they were probably duplicated in the sequencing process. <br><br>Merging a pair of strings requires finding the greatest overlap between the two and then eliminating it as the two strings are concatenated together. Overlaps are between the end of one string and beginning of another string, NOT IN THE MIDDLE OF A STRING. <br><br>By way of example, the strings 'GATTACA' and 'TTACA' overlap completely. On the other hand, the strings 'GATTACA' and 'TTA' have no overlap at all, since the matching characters of one appear in the middle of the other, not at one end or the other. Here are some examples of merging strings, including those with no overlap: <br><br><br><br>&#160;&#160;GATTA + TACA -&gt; GATTACA<br>&#160;&#160;TACA + GATTA -&gt; TACAGATTA<br>&#160;&#160;TACA + ACA -&gt; TACA<br>&#160;&#160;TAC + TACA -&gt; TACA<br>&#160;&#160;ATAC + TACA -&gt; ATACA<br>&#160;&#160;TACA + ACAT -&gt; TACAT<br>Given a set of N (2 &lt;= N &lt;= 7) DNA sequences all of whose lengths are in the range 1..7, find and print length of the shortest possible sequence obtainable by repeatedly merging all N strings using the procedure described above. All strings must be merged into the resulting sequence.</div>
+<div class="panel_bottom">&#160;</div>
+<br><div class="panel_title" align="left">Input</div> <div class="panel_content">The input consists of multiple test cases. <br>Each test case :<br>Line 1: A single integer N <br><br>Lines 2..N+1: Each line contains a single DNA subsequence<br>End of file.</div>
+<div class="panel_bottom">&#160;</div>
+<br><div class="panel_title" align="left">Output</div> <div class="panel_content">For each pair of input output the length of the shortest possible string obtained by merging the subsequences. It is always possible </div>
+</td></tr>
+</table>
+</body>
+</html>

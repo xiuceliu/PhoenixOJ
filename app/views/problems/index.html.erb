@@ -8,6 +8,7 @@
 <%= form_tag problems_path, :method => 'get' do %>
   <p>
     Search keyword in title: <%= text_field_tag :kwd, params[:kwd], class: "input", placeholder: "Keyword" %>
+    Source: <%= select_tag :src, options_for_select(["All", "Codeforces", "Hdu"], params[:src]), class: "input" %>
     <%= submit_tag "Search for Problems", :name => nil, class: "btn btn-primary" %>
   </p>
 <% end %>

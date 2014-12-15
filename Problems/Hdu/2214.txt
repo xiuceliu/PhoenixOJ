@@ -1,0 +1,107 @@
+<html>
+<head>
+<meta name="keywords" content="HDOJ ACM ICPC OJ C C++ Pascal Java">
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+<link rel="stylesheet" type="text/css" href="/images/global.css" media="all">
+<link rel="stylesheet" type="text/css" href="/css/diyinhead.css" media="all">
+<link rel="stylesheet" type="text/css" href="/css/webinhead.css" media="all">
+<script src="/js/global.js" type="text/javascript"></script><script src="/js/register.js" type="text/javascript"></script><script src="/js/MathJax/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script><title>Problem - 2214</title>
+</head>
+<body>
+<a name="top"></a>
+<table align="center" cellspacing="0" cellpadding="0" width="980" border="0" style="word-wrap:break-word">
+<tr>
+	<td style="border:#1A5CC8 1px solid" align="center" width="100%">
+		<a href="/">
+			<img src="/images/banner.jpg" width="100%" height="116" border="0">
+		</a>
+	</td>
+</tr>
+<tr>
+	<td style="border:#1A5CC8 1px solid">
+	<table cellspacing="0" cellpadding="1" width="979px">
+	<tr bgcolor="#1A5CC8" align="center" class="banner" height="25">
+		<td>Online Judge</td>
+		<td>Online Exercise</td>
+		<td>Online Teaching</td>
+		<td>Online Contests</td>
+	<td>Exercise Author</td>
+	</tr>
+	<tr style="font-size:16px" align="center">
+		<td width="20%" valign="top">
+		<a href="/faq.php" style="text-decoration: none">F.A.Q</a><br>
+		<a href="/friends" style="text-decoration: none">Hand In Hand</a><br>
+		<a href="/onlineuser.php" style="text-decoration: none">Online Acmers</a>	<br>
+		<!-- /onlineuser.php-->
+		
+		<a href="/forum" style="text-decoration: none">Forum | </a><a href="/discuss/public/list.php" style="text-decoration: none">Discuss</a><br>
+		<a href="/statistic/submit_graph.php" style="text-decoration: none">Statistical Charts</a><br>
+		</td>
+		<td width="20%" valign="top">
+		<form action="/search.php" method="get">
+		<a href="/listproblem.php?vol=1" style="text-decoration: none">Problem Archive</a><br>
+		<!--<a href="http://feeds.feedburner.com/Hdoj-problemset"><img src="/images/rss1.jpg" alt="problemset" style="vertical-align:text-bottom;"width=20 height=20></a><br>-->
+		<!--
+			 <a href="/submit.php">Submit Solution</a><br>
+		-->	
+		<a href="/status.php" style="text-decoration: none">Realtime Judge Status</a><br>
+
+		<a href="/ranklist.php" style="text-decoration: none">Authors Ranklist</a><br>
+		<input name="field" value="author" type="hidden"><input class="text60" name="key">&#160;<input class="button40" type="submit" value="Search">
+		
+		<!--
+			<input name=field value=problem type=hidden><input class=text60 name=key>&nbsp;<input class=button40 type=submit value=Search>
+		-->
+		</form>
+		</td>
+		<td width="20%" valign="top">
+		 <form action="/search.php" method="get"> 
+		&#160;&#160;&#160;&#160;&#160;<a style="text-decoration: none" href="http://code.hdu.edu.cn/">C/C++/Java Exams &#160;&#160;&#160;&#160;</a><br>
+		<a style="text-decoration: none" href="/game">ACM Steps</a><br>
+		<a href="/ITJobs/">Go to Job</a><br>	
+		<a href="/livecast" style="text-decoration: none">Contest LiveCast</a><br>
+		<a style="text-decoration: none" href="/region">ICPC@China</a><br>
+		<!-- <a href="/register.php">Register New Author</a><br> -->
+		<!-- <a href="/modifyuser.php">Update Your Information</a><br> -->
+		</form>
+		</td>
+		<td width="20%" valign="top">
+		<a href="http://bestcoder.hdu.edu.cn" style="text-decoration: none; color: red; font-weight: bold;">Best Coder <sup style="color: gray;">beta</sup></a><br><a href="/vip/contest_list.php" style="text-decoration: none">VIP</a> | <a href="/contests/contest_list.php" style="text-decoration: none">STD Contests</a><br><a href="http://code.hdu.edu.cn/vcontest" style="text-decoration: none">Virtual Contests </a><br>&#160;&#160;<a href="/diy/contest_list.php" style="text-decoration: none">&#160;&#160;DIY | </a><a href="/webcontest" style="text-decoration: none"><font color="">Web-DIY</font> <font size="1" color="gray"><sup>beta</sup></font></a><br><a style="text-decoration: none" href="/recentcontest">Recent Contests</a><br>		</td>
+		<td width="20%">
+					<form method="post" action="/userloginex.php?action=login">
+			  <table width="168" border="0" align="center" cellspacing="0">
+			  	<tr><td align="center" colspan="2"><a href="/qqlogin/oauth/login.php"><img src="/qqlogin/images/qqlogin.png" border="0"></a></td></tr>
+				<tr>
+<td width="68">Author ID&#160;</td>
+<td align="right"><input name="username" type="text" class="text90" maxlength="20"></td>
+</tr>
+				<tr>
+<td>Password&#160;</td>
+<td align="right"><input name="userpass" type="password" class="text90" maxlength="20"></td>
+</tr>
+			  </table>
+			  <input name="login" type="submit" class="button40" value="Sign In">&#160;<a href="/register.php" style="text-decoration: none">Register new ID</a>
+			</form>
+						</td>
+	</tr>
+	</table>
+	</td>
+</tr>
+<tr>
+	<td>
+		<div align="center" id="rollword"><marquee scrollamount="2" width="600" scrolldelay="30" onmouseover="javascript:this.stop();" onmouseout="javascript:this.start();"><b style="margin-right:20px"><a style="color:red" href="http://acm.hdu.edu.cn/discuss/public/post/reply.php?postid=20680&amp;messageid=1&amp;deep=0">New~ 关于举办杭电程序设计竞赛（2014'12）的报名通知
+</a>
+
+
+<a style="color:blue" href="http://bestcoder.hdu.edu.cn/contests/contest_list.php">【比赛提醒】BestCoder 你报名了吗？（点击报名）</a>
+
+<a href="http://bestcoder.hdu.edu.cn/handbook/handbook-v2.0.htm" style="color:blue">【科普】什么是BestCoder？如何参加？</a><br>
+</b></marquee></div>	</td>
+</tr>
+<tr><td align="center">
+<h1 style="color:#1A5CC8">函数图像</h1>
+<font><b><span style="font-family:Arial;font-size:12px;font-weight:bold;color:green">Time Limit: 1000/1000 MS (Java/Others)&#160;&#160;&#160;&#160;Memory Limit: 32768/32768 K (Java/Others)<br>Total Submission(s): 320&#160;&#160;&#160;&#160;Accepted Submission(s): 75<br></span></b></font><br><br><div class="panel_title" align="left">Problem Description</div> <div class="panel_content">在数学中，我们经常会遇到，关于函数的问题，在画一些函数的图像的时候，最长用的方法就是“描点法”。<br><br>“描点法” 的具体步骤如下：<br>&gt;&#160;&#160;计算出函数在某些特定点的值<br>&gt;&#160;&#160;在坐标系中标记出这些点<br>&gt;&#160;&#160;用平滑的曲线连接这些点<br><br>但是，在实际的操作中，我们会发现，前两部的计算量还是相当大的，所以，我们想编写一个程序，能够在一个坐标系中直接的画出各点。<br><br>为了简化这个问题，给出如下y 关于x 的函数表达式<br><br>&#160;&#160;y=a1x^b1+a2x^b2+a3x^b3+...+anx^bn<br><br>表达式不超过5项，并且 其中每项的系数 -10 &lt; a &lt;10 ， x的指数 0 &lt;= b &lt; 5 <br>表达式中，所有的字符串都是以 ”y=” 开始的 ，在之后的字符串中只含有x ，+ ， - ， 0~9 这些字符，不含有空格。无非法表达式输入。<br><br>特别的：<br>当x 的指数为1时，省略指数,&#160;&#160;&#160;&#160;例如: y = 2x^1 &#160;&#160;应表示为 y = 2x<br>当x 的指数为0时，省略指数和x, &#160;&#160;例如: y = 3x^3+2x^0 &#160;&#160;应表示为 y = 3x^3+2<br>当x 的系数为负时,&#160;&#160;&#160;&#160;       例如: y = 3x^2 + (-1) x 应表示为 y = 3x^2 </div>
+</td></tr>
+</table>
+</body>
+</html>
